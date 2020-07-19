@@ -24,3 +24,10 @@ You can include multiple things: Headers, subtitles, skills, banner, additional 
 ### Preview
 
 ![Github readme generator](https://arturssmirnovs.github.io/github-profile-readme-generator/images/gif.gif?v=123)
+
+#### Used
+
+https://github.com/anuraghazra/github-readme-stats
+https://github.com/arturssmirnovs/github-profile-views-counter
+https://github.com/simple-icons/simple-icons
+Vue JS :)
