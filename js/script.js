@@ -21,11 +21,11 @@ new Vue({
                 subtitle: "I am github read me generator creator",
                 text: "I made this project just for fun.",
 
-                banner: "",
+                banner: "https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png",
 
                 skills: "VUE JS / REACT / JS / HTML / CSS",
 
-                working: "",
+                working: "this page.",
                 learning: "",
                 collaborate: "",
                 help: "",
