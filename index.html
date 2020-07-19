@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Github profile readme generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/vue-simple-markdown/dist/vue-simple-markdown.css"></link>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="app" class="container">
+        <app-nav>
+            <div class="jumbotron">
+                <h1 class="display-4">Github profile readme generator</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="https://github.com/arturssmirnovs/github-profile-readme-generator" target="_blank" role="button">Learn more</a>
+                </p>
+            </div>
+        </app-nav>
+
+        <app-view class="row">
+
+            <app-content class="col-xs-12 col-md-7">
+
+                <h3>Header</h3>
+
+                <custom-input v-model="data.title" title="Heading" placeholder="Enter heading.."></custom-input>
+
+                <custom-input v-model="data.subtitle" title="Subtitle" placeholder="Enter subtitle.."></custom-input>
+
+                <div class="form-group">
+                    <label>About me</label>
+                    <textarea v-model="data.text" placeholder="Enter text.." class="form-control">{{data.text}}</textarea>
+                </div>
+
+                <custom-input v-model="data.skills" title="Skills" placeholder="Enter skills.."></custom-input>
+
+                <custom-input v-model="data.banner" title="Banner URL" placeholder="Enter banner URL.."></custom-input>
+
+                <h3>Additional information</h3>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.working" title="🔭 I’m currently working on.." placeholder="Enter details.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.learning" title="🌱 I’m currently learning.." placeholder="Enter details.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.collaborate" title="👯 I’m looking to collaborate on.." placeholder="Enter details.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.help" title="🤔 I’m looking for help with.." placeholder="Enter details.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.ask" title="💬 Ask me about.." placeholder="Enter details.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.reach" title="📫 How to reach me: " placeholder="Enter details.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.pronouns" title="😄 Pronouns: " placeholder="Enter details.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.fact" title="⚡ Fun fact: " placeholder="Enter details.."></custom-input>
+                    </div>
+                </div>
+
+
+
+                <h3>Social information</h3>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.github" title="Github" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.dev" title="DEV.TO" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.linkedin" title="LinkedIn" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.facebook" title="Facebook" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.instagram" title="Instagram" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.twitter" title="Twitter" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.codepen" title="Codepen" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <custom-input v-model="data.stackoverflow" title="Stackoverflow" placeholder="Enter URL.."></custom-input>
+                    </div>
+                    <div class="col-xs-12 col-md-12">
+                        <custom-input v-model="data.website" title="Website" placeholder="Enter URL.."></custom-input>
+                    </div>
+                </div>
+
+                <h3>Statistics</h3>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" id="defaultCheck1" type="checkbox" v-model="data.views">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Show profile views
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" v-model="data.stats" value="" id="defaultCheck2">
+                            <label class="form-check-label" for="defaultCheck2">
+                                Show statistics
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </app-content>
+
+            <app-sidebar class="col-xs-12 col-md-5">
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Preview</h5>
+                        <vue-markdown v-bind:source="source"></vue-markdown>
+                    </div>
+                </div>
+
+
+                <textarea v-model="source" class="form-control">{{source}}</textarea>
+
+            </app-sidebar>
+
+        </app-view>
+
+        <footer class="text-muted">
+            <div class="container">
+                <p class="float-right">
+                    <a href="#">Back to top</a>
+                </p>
+                <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+                <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/markdown.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+
+
