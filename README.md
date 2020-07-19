@@ -28,6 +28,9 @@ You can include multiple things: Headers, subtitles, skills, banner, additional 
 #### Used
 
 https://github.com/anuraghazra/github-readme-stats
+
 https://github.com/arturssmirnovs/github-profile-views-counter
+
 https://github.com/simple-icons/simple-icons
+
 Vue JS :)
