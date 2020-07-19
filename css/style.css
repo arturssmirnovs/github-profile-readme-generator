@@ -1,14 +1,35 @@
 app-sidebar textarea {
-  min-height: 500px; }
+  min-height: 290px; }
 app-sidebar img {
   max-width: 100%; }
 
 .jumbotron {
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  padding: 2rem 2rem; }
+  .jumbotron h1 {
+    font-weight: bold; }
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px; }
+
+.nav-pills {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: .25rem; }
+
+.tab {
+  padding-top: 30px; }
+  .tab h3 {
+    text-transform: uppercase;
+    margin-bottom: 20px; }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
+  background-color: #e9ecef;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  color: #000; }
 
 footer p {
   margin-bottom: .25rem; }

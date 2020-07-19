@@ -14,6 +14,8 @@ new Vue({
     el: '#app',
     data: function () {
         return {
+            forced: false,
+            tab: "header",
             data: {
                 title: "my name is Arturs",
                 subtitle: "I am github read me generator creator",
@@ -21,7 +23,7 @@ new Vue({
 
                 banner: "",
 
-                skills: "VUE JS / JS / REACT / HTML / CSSs",
+                skills: "VUE JS / REACT / JS / HTML / CSS",
 
                 working: "",
                 learning: "",
@@ -52,6 +54,7 @@ new Vue({
         data: {
             deep: true,
             handler() {
+                this.forced = false;
                 this.source = this.getSource(this.data);
             }
         },
@@ -60,6 +63,9 @@ new Vue({
         this.source = this.getSource(this.data);
     },
     methods: {
+        onKeyUp(event) {
+            this.forced = true;
+        },
         getSource: function (data) {
             let source = '';
 
@@ -149,10 +155,10 @@ new Vue({
                 source += "\n";
                 source += "\n";
 
-                if (data.stats) {
+                if (data.stats && data.github) {
                     source += "![Github stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)";
                 }
-                if (data.views) {
+                if (data.views && data.github) {
                     source += "![Profile views](https://gpvc.arturio.dev/"+data.github+")  ";
                 }
             }
