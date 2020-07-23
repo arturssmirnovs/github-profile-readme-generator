@@ -156,7 +156,7 @@ new Vue({
                 source += "\n";
 
                 if (data.stats && data.github) {
-                    source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)";
+                    source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
                 }
                 if (data.views && data.github) {
                     source += "![Profile views](https://gpvc.arturio.dev/"+data.github+")  ";
