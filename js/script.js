@@ -18,7 +18,7 @@ new Vue({
             tab: "header",
             data: {
                 title: "my name is Arturs",
-                subtitle: "I am github read me generator creator",
+                subtitle: "I am GitHub read me generator creator",
                 text: "I made this project just for fun.",
 
                 banner: "https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png",
@@ -146,7 +146,7 @@ new Vue({
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg' alt='codepen' height='40'>](https://codepen.io/"+data.codepen+")  ";
                 }
                 if (data.stackoverflow) {
-                    source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg' alt='stackoverflow' height='40'>]("+data.stackoverflow+")  ";
+                    source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg' alt='stackoverflow' height='40'>](https://stackoverflow.com/users/"+data.stackoverflow+")  ";
                 }
                 if (data.website) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/icloud.svg' alt='website' height='40'>]("+data.website+")  ";
@@ -156,7 +156,7 @@ new Vue({
                 source += "\n";
 
                 if (data.stats && data.github) {
-                    source += "![Github stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)";
+                    source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)";
                 }
                 if (data.views && data.github) {
                     source += "![Profile views](https://gpvc.arturio.dev/"+data.github+")  ";
