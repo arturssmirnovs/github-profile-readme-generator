@@ -19,7 +19,7 @@ new Vue({
             data: {
                 title: "my name is Arturs",
                 subtitle: "I am GitHub read me generator creator",
-                text: "I made this project just for fun.",
+                text: "I made this project just for fun this project allows you to create nice and simple GitHub readme files that you can copy/paste as use in your profile.",
 
                 banner: "https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png",
 
@@ -45,7 +45,11 @@ new Vue({
                 twitter: "",
                 codepen: "",
                 stackoverflow: "",
+                youtube: "",
+                reddit: "",
                 website: "",
+
+                items: [],
             },
             source: this.getSource(this.data),
         };
@@ -59,12 +63,27 @@ new Vue({
             }
         },
     },
-    mounted:function(){
+    mounted: function(){
         this.source = this.getSource(this.data);
+        this.addItem();
     },
     methods: {
+        addItem() {
+            this.data.items.push({
+                value: '',
+                icon: ''
+            });
+        },
         onKeyUp(event) {
             this.forced = true;
+        },
+        slugify(text) {
+            return text.toString().toLowerCase()
+                .replace(/\s+/g, '')
+                .replace(/[^\w\-]+/g, '')
+                .replace(/\-\-+/g, '')
+                .replace(/^-+/, '')
+                .replace(/-+$/, '');
         },
         getSource: function (data) {
             let source = '';
@@ -97,28 +116,36 @@ new Vue({
                 source += "\n";
 
                 if (data.working) {
-                    source += "🔭 I’m currently working on "+data.working+" ";
+                    source += "- 🔭 I’m currently working on "+data.working+" ";
+                    source += "\n";
                 }
                 if (data.learning) {
-                    source += "🌱 I’m currently learning "+data.learning+" ";
+                    source += "- 🌱 I’m currently learning "+data.learning+" ";
+                    source += "\n";
                 }
                 if (data.collaborate) {
-                    source += "👯 I’m looking to collaborate on "+data.collaborate+" ";
+                    source += "- 👯 I’m looking to collaborate on "+data.collaborate+" ";
+                    source += "\n";
                 }
                 if (data.help) {
-                    source += "🤔 I’m looking for help with "+data.help+" ";
+                    source += "- 🤔 I’m looking for help with "+data.help+" ";
+                    source += "\n";
                 }
                 if (data.ask) {
-                    source += "💬 Ask me about "+data.ask+" ";
+                    source += "- 💬 Ask me about "+data.ask+" ";
+                    source += "\n";
                 }
                 if (data.reach) {
-                    source += "📫 How to reach me: "+data.reach+" ";
+                    source += "- 📫 How to reach me: "+data.reach+" ";
+                    source += "\n";
                 }
                 if (data.pronouns) {
-                    source += "😄 Pronouns: "+data.pronouns+" ";
+                    source += "- 😄 Pronouns: "+data.pronouns+" ";
+                    source += "\n";
                 }
                 if (data.fact) {
-                    source += "⚡ Fun fact: "+data.fact+" ";
+                    source += "- ⚡ Fun fact: "+data.fact+" ";
+                    source += "\n";
                 }
 
                 source += "\n";
@@ -148,8 +175,22 @@ new Vue({
                 if (data.stackoverflow) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg' alt='stackoverflow' height='40'>](https://stackoverflow.com/users/"+data.stackoverflow+")  ";
                 }
+                if (data.youtube) {
+                    source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg' alt='YouTube' height='40'>](https://www.youtube.com/channel/"+data.youtube+")  ";
+                }
+                if (data.reddit) {
+                    source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/reddit.svg' alt='Reddit' height='40'>](https://www.reddit.com/user/"+data.reddit+")  ";
+                }
                 if (data.website) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/icloud.svg' alt='website' height='40'>]("+data.website+")  ";
+                }
+
+                for (index = 0; index < data.items.length; ++index) {
+                    if (data.items[index].icon && data.items[index].value) {
+                        let icon = this.slugify(data.items[index].icon);
+                        let url = data.items[index].value;
+                        source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/"+icon+".svg' alt='"+icon+"' height='40'>]("+url+")  ";
+                    }
                 }
 
                 source += "\n";
@@ -157,6 +198,8 @@ new Vue({
 
                 if (data.stats && data.github) {
                     source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
+                    source += "\n";
+                    source += "\n";
                 }
                 if (data.views && data.github) {
                     source += "![Profile views](https://gpvc.arturio.dev/"+data.github+")  ";

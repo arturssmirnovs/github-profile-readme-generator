@@ -2,10 +2,27 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>GitHub profile readme generator - by @arturssmirnovs</title>
+    <meta name="description" content="GitHub profile readme generator is a tool that allows you to create simple and beautiful readme that you can copy/paste and include in your profile repository as profile preview." />
 
-    <meta name="description" content="">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@artuurssmirnovs" />
+    <meta name="twitter:title" content="GitHub profile readme generator" />
+    <meta name="twitter:description" content="GitHub profile readme generator is a tool that allows you to create simple and beautiful readme that you can copy/paste and include in your profile repository as profile preview." />
+    <meta name="twitter:creator" content="@arturssmirnovs" />
+    <meta name="twitter:image" content="https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png" />
 
+    <meta property="og:title" content="GitHub profile readme generator" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://arturssmirnovs.github.io/github-profile-readme-generator/" />
+    <meta property="og:image" content="https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png" />
+    <meta property="og:description" content="GitHub profile readme generator is a tool that allows you to create simple and beautiful readme that you can copy/paste and include in your profile repository as profile preview." />
+    <meta property="og:site_name" content="artuurs.smirnovs" />
+
+    <link href="https://arturssmirnovs.github.io/github-profile-readme-generator/" rel="canonical" />
     <link rel="icon" type="image/png" href="images/icon.png" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -29,7 +46,7 @@
 
         <app-view class="row">
 
-            <app-content class="col-xs-12 col-md-7">
+            <app-content class="col-xs-12 col-md-6">
 
                 <nav class="nav nav-pills nav-justified">
                     <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'header'" v-bind:class="[tab == 'header' ? 'active' : '', '']">Header</a>
@@ -112,10 +129,37 @@
                             <custom-input v-model="data.codepen" title="Codepen" placeholder="Enter username.."></custom-input>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <custom-input v-model="data.stackoverflow" title="Stack Overflow" placeholder="Enter UserId.."></custom-input>
+                            <custom-input v-model="data.stackoverflow" title="Stack Overflow" placeholder="Enter user ID.."></custom-input>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <custom-input v-model="data.youtube" title="YouTube" placeholder="Enter channel ID.."></custom-input>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <custom-input v-model="data.reddit" title="Reddit" placeholder="Enter username.."></custom-input>
                         </div>
                         <div class="col-xs-12 col-md-12">
                             <custom-input v-model="data.website" title="Website" placeholder="Enter URL.."></custom-input>
+                        </div>
+                        <div class="col-xs-12 col-md-12">
+                            <h4>Others</h4>
+                        </div>
+                        <div class="col-xs-12 col-md-12" v-for="item in data.items">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <label>Icon</label>
+                                        <select v-model="item.icon" class="form-control">
+                                            <option v-for="icon in icons" :value="icon.title">{{icon.title}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <custom-input v-model="item.value" title="Link" placeholder="Enter URL.."></custom-input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-12">
+                            <button @click="addItem" class="btn btn-primary">Add more</button>
                         </div>
                     </div>
                 </div>
@@ -147,7 +191,7 @@
 
             </app-content>
 
-            <app-sidebar class="col-xs-12 col-md-5">
+            <app-sidebar class="col-xs-12 col-md-6">
 
                 <div class="card mb-4">
                     <div class="card-body">
@@ -156,11 +200,17 @@
                     </div>
                 </div>
 
-                <div class="alert alert-danger" role="alert" v-if="forced">
-                    Changing source manually could result in lost of data if you use generation fields again.
-                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Code</h5>
 
-                <textarea v-model="source" @keyup="onKeyUp" class="form-control">{{source}}</textarea>
+                        <div class="alert alert-danger" role="alert" v-if="forced">
+                            Changing source manually could result in lost of data if you use generation fields again.
+                        </div>
+
+                        <textarea v-model="source" @keyup="onKeyUp" class="form-control">{{source}}</textarea>
+                    </div>
+                </div>
 
             </app-sidebar>
 
@@ -175,6 +225,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/icons.js"></script>
     <script src="js/markdown.js"></script>
     <script src="js/script.js"></script>
 
