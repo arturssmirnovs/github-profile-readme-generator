@@ -36,6 +36,9 @@ new Vue({
 
                 views: false,
                 stats: false,
+				arctic: false,
+				devprog: false,
+				pro: false,
 
                 github: "",
                 dev: "",
@@ -195,7 +198,23 @@ new Vue({
 
                 source += "\n";
                 source += "\n";
-
+				if (data.arctic || data.devprog || data.gitpro) {
+                    source += "## Github Badges :";
+					source += "\n";
+                }
+                if (data.arctic) {
+                    source += "</a> <a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> ";
+                }
+				if (data.devprog) {
+                    source += "</a>  <a href='https://docs.github.com/en/developers'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' width='40' height='40'></a> ";
+                }
+				if (data.gitpro) {
+                    source += "</a>  <a href='https://github.com/pricing'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' width='50' height='50'></a>";
+                }
+				if (data.arctic || data.devprog || data.gitpro) {
+                    source += "\n";
+					source += "\n";
+                }
                 if (data.stats && data.github) {
                     source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
                     source += "\n";
