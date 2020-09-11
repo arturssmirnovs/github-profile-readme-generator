@@ -31,6 +31,6 @@ https://github.com/anuraghazra/github-readme-stats
 
 https://github.com/arturssmirnovs/github-profile-views-counter
 
-https://github.com/simple-icons/simple-icons
+https://github.com/ryo-ma/github-profile-trophy
 
-Vue JS :)
+https://github.com/simple-icons/simple-icons
