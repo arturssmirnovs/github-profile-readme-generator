@@ -36,9 +36,13 @@ new Vue({
 
                 views: false,
                 stats: false,
-		arctic: false,
-		devprog: false,
-		pro: false,
+
+                languages: false,
+                trophy: false,
+
+                arctic: false,
+                devprog: false,
+                pro: false,
 
                 github: "",
                 dev: "",
@@ -202,19 +206,31 @@ new Vue({
                 if (data.arctic) {
                     source += "<a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> ";
                 }
-		if (data.devprog) {
+		        if (data.devprog) {
                     source += "<a href='https://docs.github.com/en/developers'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' width='40' height='40'></a> ";
                 }
-		if (data.gitpro) {
+		        if (data.gitpro) {
                     source += "<a href='https://github.com/pricing'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' width='50' height='50'></a>";
                 }
-		if (data.arctic || data.devprog || data.gitpro) {
+		        if (data.arctic || data.devprog || data.gitpro) {
                     source += "\n";
                     source += "\n";
                 }
-		    
-                if (data.stats && data.github) {
+
+                if (data.trophy && data.github) {
+                    source += "[![trophy](https://github-profile-trophy.vercel.app/?username="+data.github+")](https://github.com/ryo-ma/github-profile-trophy)";
+                    source += "\n";
+                    source += "\n";
+                }
+
+                if (data.languages && data.github) {
                     source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
+                    source += "\n";
+                    source += "\n";
+                }
+
+                if (data.stats && data.github) {
+                    source += "[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username="+data.github+")](https://github.com/anuraghazra/github-readme-stats)";
                     source += "\n";
                     source += "\n";
                 }

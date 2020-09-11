@@ -52,8 +52,7 @@
                     <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'header'" v-bind:class="[tab == 'header' ? 'active' : '', '']">Header</a>
                     <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'additional'" v-bind:class="[tab == 'additional' ? 'active' : '', '']">Additional</a>
                     <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'social'" v-bind:class="[tab == 'social' ? 'active' : '', '']">Social</a>
-					<a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'badge'" v-bind:class="[tab == 'badge' ? 'active' : '', '']">Badges</a>
-                    <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'stats'" v-bind:class="[tab == 'stats' ? 'active' : '', '']">Stats</a>
+                    <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'stats'" v-bind:class="[tab == 'stats' ? 'active' : '', '']">Others</a>
                 </nav>
 
                 <div v-if="tab == 'header'" class="tab">
@@ -164,36 +163,6 @@
                         </div>
                     </div>
                 </div>
-				
-		<div v-if="tab == 'badge'" class="tab">
-                    <h3>Github Badges</h3>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <div class="form-check">
-                                <input class="form-check-input" id="defaultCheck1" type="checkbox" v-model="data.arctic">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Show Arctic Contributor Badge
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" v-model="data.devprog" value="" id="defaultCheck2">
-                                <label class="form-check-label" for="defaultCheck2">
-                                    Show Developer Program Badge
-                                </label>
-                            </div>
-                        </div>
-			<div class="col-xs-12 col-md-6">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" v-model="data.gitpro" value="" id="defaultCheck3">
-                                <label class="form-check-label" for="defaultCheck3">
-                                    Show Github Pro Badge
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div v-if="tab == 'stats'" class="tab">
                     <h3>Statistics</h3>
@@ -202,7 +171,7 @@
 
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check">
+                            <div class="form-check mb-2">
                                 <input class="form-check-input" id="defaultCheck1" type="checkbox" v-model="data.views">
                                 <label class="form-check-label" for="defaultCheck1">
                                     Show profile views
@@ -210,14 +179,65 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check">
+                            <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" v-model="data.stats" value="" id="defaultCheck2">
                                 <label class="form-check-label" for="defaultCheck2">
-                                    Show statistics
+                                    Show GitHub statistics
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" v-model="data.languages" value="" id="defaultCheck3">
+                                <label class="form-check-label" for="defaultCheck3">
+                                    Show most used languages
                                 </label>
                             </div>
                         </div>
                     </div>
+
+                    <h3 class="mt-3">Github Trophies</h3>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" v-model="data.trophy" value="" id="defaultCheck4">
+                                <label class="form-check-label" for="defaultCheck4">
+                                    Show Trophies
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-3">Github Badges</h3>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" id="defaultCheck11" type="checkbox" v-model="data.arctic">
+                                <label class="form-check-label" for="defaultCheck11">
+                                    Arctic Contributor
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" v-model="data.devprog" value="" id="defaultCheck22">
+                                <label class="form-check-label" for="defaultCheck22">
+                                    Developer Program
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" v-model="data.gitpro" value="" id="defaultCheck33">
+                                <label class="form-check-label" for="defaultCheck33">
+                                    Github Pro
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </app-content>
