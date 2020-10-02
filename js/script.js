@@ -86,6 +86,7 @@ new Vue({
         },
         slugify(text) {
             return text.toString().toLowerCase()
+                .replace(/\.+/g, '-dot-')
                 .replace(/\s+/g, '')
                 .replace(/[^\w\-]+/g, '')
                 .replace(/\-\-+/g, '')
