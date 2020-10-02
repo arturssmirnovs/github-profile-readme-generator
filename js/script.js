@@ -231,13 +231,13 @@ new Vue({
                 }
 
                 if (data.languages && data.github) {
-                    source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
+                    source += "[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username="+data.github+")](https://github.com/anuraghazra/github-readme-stats)";
                     source += "\n";
                     source += "\n";
                 }
 
                 if (data.stats && data.github) {
-                    source += "[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username="+data.github+")](https://github.com/anuraghazra/github-readme-stats)";
+                    source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
                     source += "\n";
                     source += "\n";
                 }
