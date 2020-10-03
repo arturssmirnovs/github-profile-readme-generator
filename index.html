@@ -49,10 +49,10 @@
             <app-content class="col-xs-12 col-md-6">
 
                 <nav class="nav nav-pills nav-justified">
-                    <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'header'" v-bind:class="[tab == 'header' ? 'active' : '', '']">Header</a>
-                    <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'additional'" v-bind:class="[tab == 'additional' ? 'active' : '', '']">Additional</a>
-                    <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'social'" v-bind:class="[tab == 'social' ? 'active' : '', '']">Social</a>
-                    <a class="nav-item nav-link" href="#" onclick="return false;" v-on:click="tab = 'stats'" v-bind:class="[tab == 'stats' ? 'active' : '', '']">Others</a>
+                    <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'header'" :class="[tab == 'header' ? 'active' : '', '']">Header</a>
+                    <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'additional'" :class="[tab == 'additional' ? 'active' : '', '']">Additional</a>
+                    <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'social'" :class="[tab == 'social' ? 'active' : '', '']">Social</a>
+                    <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'stats'" :class="[tab == 'stats' ? 'active' : '', '']">Others</a>
                 </nav>
 
                 <div v-if="tab == 'header'" class="tab">
@@ -129,10 +129,16 @@
                             <custom-input v-model="data.codepen" title="Codepen" placeholder="Enter username.."></custom-input>
                         </div>
                         <div class="col-xs-12 col-md-6">
+                            <custom-input v-model="data.codesandbox" title="CodeSandbox" placeholder="Enter username.."></custom-input>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
                             <custom-input v-model="data.stackoverflow" title="Stack Overflow" placeholder="Enter user ID.."></custom-input>
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <custom-input v-model="data.youtube" title="YouTube" placeholder="Enter channel ID.."></custom-input>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <custom-input v-model="data.twitch" title="Twitch" placeholder="Enter username.."></custom-input>
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <custom-input v-model="data.reddit" title="Reddit" placeholder="Enter username.."></custom-input>
@@ -263,7 +269,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h5 class="card-title">Preview</h5>
-                        <vue-markdown v-bind:source="source"></vue-markdown>
+                        <vue-markdown :source="source"></vue-markdown>
                     </div>
                 </div>
 
