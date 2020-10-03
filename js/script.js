@@ -54,6 +54,7 @@ new Vue({
                 codesandbox: "",
                 stackoverflow: "",
                 youtube: "",
+                twitch: "",
                 reddit: "",
                 website: "",
 
@@ -189,6 +190,9 @@ new Vue({
                 }
                 if (data.youtube) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg' alt='YouTube' height='40'>](https://www.youtube.com/channel/"+data.youtube+")  ";
+                }
+                if (data.twitch) {
+                    source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitch.svg' alt='Twitch' height='40'>](https://www.twitch.tv/"+data.twitch+")  ";
                 }
                 if (data.reddit) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/reddit.svg' alt='Reddit' height='40'>](https://www.reddit.com/user/"+data.reddit+")  ";
