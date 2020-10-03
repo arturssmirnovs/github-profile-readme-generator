@@ -51,6 +51,7 @@ new Vue({
                 instagram: "",
                 twitter: "",
                 codepen: "",
+                codesandbox: "",
                 stackoverflow: "",
                 youtube: "",
                 reddit: "",
