@@ -247,8 +247,14 @@ new Vue({
                     source += "\n";
                 }
 
-                if (data.stats && data.github) {
+                if (data.stats && data.github && !data.private) {
                     source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
+                    source += "\n";
+                    source += "\n";
+                }
+
+                if (data.stats && data.github && data.private) {
+                    source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true&count_private=true)  ";
                     source += "\n";
                     source += "\n";
                 }
