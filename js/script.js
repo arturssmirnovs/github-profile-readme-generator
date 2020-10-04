@@ -259,6 +259,10 @@ new Vue({
             }
 
             return source;
+        },
+        copyCode() {
+            this.$refs.code.select();
+            document.execCommand("copy");
         }
     }
 });
