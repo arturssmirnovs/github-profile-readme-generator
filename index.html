@@ -47,7 +47,15 @@
         <app-view class="row">
 
             <app-content class="col-xs-12 col-md-6">
-
+                <div class="md-tips">
+                    Markdown Tips:
+                    <ul>
+                        <li>To <b>bolden</b> the text, wrap it with two asterisks (**<b>word</b>**)</li>
+                        <li>To <i>italisize</i> the text, wrap it with one asterisk (*<i>word</i>*)</li>
+                        <li>To <s>strikethrough</s> the text, wrap it with two ~'s (~~<s>word</s>~~)</li>
+                    </ul>
+                </div>
+                
                 <nav class="nav nav-pills nav-justified">
                     <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'header'" :class="[tab == 'header' ? 'active' : '', '']">Header</a>
                     <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'additional'" :class="[tab == 'additional' ? 'active' : '', '']">Additional</a>
@@ -261,7 +269,6 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="card-title"> 👨‍💻 Code</h5>
-                            <!-- Add the COPY ICON -->
                             <button class="btn btn-primary mb-2 d-flex" @click="copyCode">
                                 <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg> &nbsp;
                                 <span> Copy</span>
