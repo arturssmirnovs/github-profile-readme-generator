@@ -1,11 +1,14 @@
 Vue.use(VueMarkdown);
 
 Vue.component('custom-input', {
-    props: ['value', 'title', 'placeholder'],
+    props: ['value', 'title', 'placeholder', 'brand'],
     template: `
   <div class="form-group">
-    <label for="`+this.title+`">{{title}}</label>
-    <input type="text" class="form-control" v-bind:value="value" v-on:input="$emit('input', $event.target.value)" aria-describedby="`+this.title+`" v-bind:placeholder="placeholder">
+    <label :for="title">
+      <img v-if="brand" :src="'https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/'+brand+'.svg'" :alt="brand" height='30'> &nbsp;
+      {{ title }}
+    </label>
+    <input type="text" class="form-control" :value="value" @input="$emit('input', $event.target.value)" :aria-describedby="title" :placeholder="placeholder" />
   </div>
   `
 })
