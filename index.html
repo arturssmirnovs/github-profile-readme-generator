@@ -26,8 +26,8 @@
     <link rel="icon" type="image/png" href="images/icon.png" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/vue-simple-markdown/dist/vue-simple-markdown.css"></link>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-simple-markdown/dist/vue-simple-markdown.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -47,7 +47,15 @@
         <app-view class="row">
 
             <app-content class="col-xs-12 col-md-6">
-
+                <div class="md-tips">
+                    Markdown Tips:
+                    <ul>
+                        <li>To <b>bolden</b> the text, wrap it with two asterisks (**<b>word</b>**)</li>
+                        <li>To <i>italisize</i> the text, wrap it with one asterisk (*<i>word</i>*)</li>
+                        <li>To <s>strikethrough</s> the text, wrap it with two ~'s (~~<s>word</s>~~)</li>
+                    </ul>
+                </div>
+                
                 <nav class="nav nav-pills nav-justified">
                     <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'header'" :class="[tab == 'header' ? 'active' : '', '']">Header</a>
                     <a class="nav-item nav-link" href="#" onclick="return false;" @click="tab = 'additional'" :class="[tab == 'additional' ? 'active' : '', '']">Additional</a>
@@ -177,40 +185,34 @@
 
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" id="defaultCheck1" type="checkbox" v-model="data.views">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Show profile views
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1" v-model="data.views">
+                                <label class="custom-control-label" for="customCheck1">Show profile views</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" v-model="data.stats" value="" id="defaultCheck2">
-                                <label class="form-check-label" for="defaultCheck2">
-                                    Show GitHub statistics
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2" v-model="data.stats">
+                                <label class="custom-control-label" for="customCheck2">Show GitHub statistics</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" v-model="data.languages" value="" id="defaultCheck3">
-                                <label class="form-check-label" for="defaultCheck3">
-                                    Show most used languages
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck3" v-model="data.languages">
+                                <label class="custom-control-label" for="customCheck3">Show GitHub statistics</label>
                             </div>
                         </div>
                     </div>
 
                     <h3 class="mt-3">Github Trophies</h3>
 
+                    <p>GitHub username required.</p>
+
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" v-model="data.trophy" value="" id="defaultCheck4">
-                                <label class="form-check-label" for="defaultCheck4">
-                                    Show Trophies
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck4" v-model="data.trophy">
+                                <label class="custom-control-label" for="customCheck4">Show Trophies</label>
                             </div>
                         </div>
                     </div>
@@ -219,43 +221,33 @@
 
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" id="defaultCheck11" type="checkbox" v-model="data.arctic">
-                                <label class="form-check-label" for="defaultCheck11">
-                                    Arctic Contributor
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck5" v-model="data.arctic">
+                                <label class="custom-control-label" for="customCheck5">Arctic Contributor</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" v-model="data.devprog" value="" id="defaultCheck22">
-                                <label class="form-check-label" for="defaultCheck22">
-                                    Developer Program
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck6" v-model="data.devprog">
+                                <label class="custom-control-label" for="customCheck6">Developer Program</label>
                             </div>
                         </div>
-			<div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" id="defaultCheck33" type="checkbox" v-model="data.star">
-                                <label class="form-check-label" for="defaultCheck33">
-                                    Stars Program
-                                </label>
+			            <div class="col-xs-12 col-md-6">
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck7" v-model="data.star">
+                                <label class="custom-control-label" for="customCheck7">Stars Program</label>
                             </div>
                         </div>
-			<div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" id="defaultCheck44" type="checkbox" v-model="data.sponsor">
-                                <label class="form-check-label" for="defaultCheck44">
-                                    Sponsor
-                                </label>
+			            <div class="col-xs-12 col-md-6">
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck8" v-model="data.sponsor">
+                                <label class="custom-control-label" for="customCheck8">Sponsor</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" v-model="data.gitpro" value="" id="defaultCheck55">
-                                <label class="form-check-label" for="defaultCheck55">
-                                    Github Pro
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck9" v-model="data.gitpro">
+                                <label class="custom-control-label" for="customCheck9">Github Pro</label>
                             </div>
                         </div>
                     </div>
@@ -275,13 +267,17 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5 class="card-title">Code</h5>
-
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title"> 👨‍💻 Code</h5>
+                            <button class="btn btn-primary mb-2 d-flex" @click="copyCode">
+                                <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg> &nbsp;
+                                <span> Copy</span>
+                            </button>
+                        </div>
                         <div class="alert alert-danger" role="alert" v-if="forced">
                             Changing source manually could result in lost of data if you use generation fields again.
                         </div>
-
-                        <textarea v-model="source" @keyup="onKeyUp" class="form-control">{{source}}</textarea>
+                        <textarea v-model="source" @keyup="onKeyUp" class="form-control" ref="code">{{ source }}</textarea>
                     </div>
                 </div>
 
