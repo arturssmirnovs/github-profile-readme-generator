@@ -199,15 +199,13 @@
                         <div class="col-xs-12 col-md-6">
                             <div class="custom-control custom-checkbox mb-2">
                                 <input type="checkbox" class="custom-control-input" id="customCheck3" v-model="data.languages">
-                                <label class="custom-control-label" for="customCheck3">Show GitHub statistics</label>
+                                <label class="custom-control-label" for="customCheck3">Show most used languages</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" v-model="data.private" value="" id="defaultCheck4" :disabled="!data.stats">
-                                <label class="form-check-label" for="defaultCheck4">
-                                    Include private repositories
-                                </label>
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="defaultCheck4" v-model="data.private" :disabled="!data.stats">
+                                <label class="custom-control-label" for="defaultCheck4">Include private repositories</label>
                             </div>
                         </div>
                     </div>
