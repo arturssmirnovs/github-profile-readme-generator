@@ -202,6 +202,14 @@
                                 <label class="custom-control-label" for="customCheck3">Show GitHub statistics</label>
                             </div>
                         </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" v-model="data.private" value="" id="defaultCheck4" :disabled="!data.stats">
+                                <label class="form-check-label" for="defaultCheck4">
+                                    Include private repositories
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <h3 class="mt-3">Github Trophies</h3>
