@@ -1,11 +1,14 @@
 Vue.use(VueMarkdown);
 
 Vue.component('custom-input', {
-    props: ['value', 'title', 'placeholder'],
+    props: ['value', 'title', 'placeholder', 'brand'],
     template: `
   <div class="form-group">
-    <label for="`+this.title+`">{{title}}</label>
-    <input type="text" class="form-control" v-bind:value="value" v-on:input="$emit('input', $event.target.value)" aria-describedby="`+this.title+`" v-bind:placeholder="placeholder">
+    <label :for="title">
+      <img v-if="brand" :src="'https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/'+brand+'.svg'" :alt="brand" height='30'> &nbsp;
+      {{ title }}
+    </label>
+    <input type="text" class="form-control" :value="value" @input="$emit('input', $event.target.value)" :aria-describedby="title" :placeholder="placeholder" />
   </div>
   `
 })
@@ -51,8 +54,10 @@ new Vue({
                 instagram: "",
                 twitter: "",
                 codepen: "",
+                codesandbox: "",
                 stackoverflow: "",
                 youtube: "",
+                twitch: "",
                 reddit: "",
                 website: "",
 
@@ -180,11 +185,17 @@ new Vue({
                 if (data.codepen) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg' alt='codepen' height='40'>](https://codepen.io/"+data.codepen+")  ";
                 }
+                if (data.codesandbox) {
+                    source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codesandbox.svg' alt='codesandbox' height='40'>](https://codesandbox.io/u/"+data.codesandbox+")  ";
+                }
                 if (data.stackoverflow) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg' alt='stackoverflow' height='40'>](https://stackoverflow.com/users/"+data.stackoverflow+")  ";
                 }
                 if (data.youtube) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg' alt='YouTube' height='40'>](https://www.youtube.com/channel/"+data.youtube+")  ";
+                }
+                if (data.twitch) {
+                    source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitch.svg' alt='Twitch' height='40'>](https://www.twitch.tv/"+data.twitch+")  ";
                 }
                 if (data.reddit) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/reddit.svg' alt='Reddit' height='40'>](https://www.reddit.com/user/"+data.reddit+")  ";
@@ -231,13 +242,19 @@ new Vue({
                 }
 
                 if (data.languages && data.github) {
+                    source += "[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username="+data.github+")](https://github.com/anuraghazra/github-readme-stats)";
+                    source += "\n";
+                    source += "\n";
+                }
+
+                if (data.stats && data.github && !data.private) {
                     source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true)  ";
                     source += "\n";
                     source += "\n";
                 }
 
-                if (data.stats && data.github) {
-                    source += "[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username="+data.github+")](https://github.com/anuraghazra/github-readme-stats)";
+                if (data.stats && data.github && data.private) {
+                    source += "![GitHub stats](https://github-readme-stats.vercel.app/api?username="+data.github+"&show_icons=true&count_private=true)  ";
                     source += "\n";
                     source += "\n";
                 }
@@ -248,6 +265,10 @@ new Vue({
             }
 
             return source;
+        },
+        copyCode() {
+            this.$refs.code.select();
+            document.execCommand("copy");
         }
     }
 });
