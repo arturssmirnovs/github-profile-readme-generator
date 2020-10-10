@@ -29,10 +29,9 @@ You can include multiple things: Headers, subtitles, skills, banner, additional 
 
 #### Used
 
-https://github.com/anuraghazra/github-readme-stats
-
-https://github.com/arturssmirnovs/github-profile-views-counter
-
-https://github.com/ryo-ma/github-profile-trophy
-
-https://github.com/simple-icons/simple-icons
+| Repository Name                  | Repository Link                                                |
+| ---------------------------------|--------------------------------------------------------------- |
+| _Github Readme Status_           | https://github.com/anuraghazra/github-readme-stats             |
+| _Github Profile Views Counter_   | https://github.com/arturssmirnovs/github-profile-views-counter |
+| _Github Profile Trophy_          | https://github.com/ryo-ma/github-profile-trophy                |
+| _Simple icons_                   | https://github.com/simple-icons/simple-icons                   |
