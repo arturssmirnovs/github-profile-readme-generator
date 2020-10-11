@@ -39,6 +39,7 @@ new Vue({
 
                 views: false,
                 stats: false,
+                metrics: false,
 
                 languages: false,
                 trophy: false,
@@ -258,7 +259,13 @@ new Vue({
                     source += "\n";
                     source += "\n";
                 }
-		    
+
+                if (data.metrics && data.github) {
+                    source += "![GitHub metrics](https://metrics.lecoq.io/"+data.github+")  ";
+                    source += "\n";
+                    source += "\n";
+                }
+
                 if (data.views && data.github) {
                     source += "![Profile views](https://gpvc.arturio.dev/"+data.github+")  ";
                 }
