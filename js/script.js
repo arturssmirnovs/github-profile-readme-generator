@@ -29,12 +29,12 @@ new Vue({
             data: {
                 language: "en",
                 title: "my name is Arturs",
-                subtitle: "I am GitHub Readme Generator's creator",
-                text: "I made this project just for fun, it allows you to create nice and simple GitHub Readme files that you can copy/paste and use in your profile.",
+                subtitle: "I am GitHub read me generator creator",
+                text: "I made this project just for fun this project allows you to create nice and simple GitHub readme files that you can copy/paste as use in your profile.",
 
                 banner: "https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png",
 
-                skills: "",
+                skills: "VUE JS / REACT / JS / HTML / CSS",
 
                 working: "this page.",
                 learning: "",
@@ -73,6 +73,7 @@ new Vue({
                 items: [],
             },
             source: this.getSource(this.data),
+            translations: this.getTranslations(this.data)
         };
     },
     watch: {
@@ -80,12 +81,14 @@ new Vue({
             deep: true,
             handler() {
                 this.forced = false;
+                this.translations = this.getTranslations(this.data);
                 this.source = this.getSource(this.data);
             }
         }
     },
     mounted: function(){
         this.source = this.getSource(this.data);
+        this.translations = this.getTranslations(this.data)
         this.addItem();
     },
     methods: {
@@ -112,12 +115,8 @@ new Vue({
 
             if (data) {
 
-                if (data.title && data.language === "en") {
-                    source += "### Hi there 👋, "+data.title+"";
-                    source += "\n";
-                }
-                if (data.title && data.language === "es") {
-                    source += "### Hola 👋, "+data.title+"";
+                if (data.title) {
+                    source += "### "+this.translations.hiThere+" 👋, "+data.title+"";
                     source += "\n";
                 }
                 if (data.subtitle) {
@@ -133,81 +132,44 @@ new Vue({
                     source += ""+data.text+"";
                     source += "\n";
                 }
-                if (data.skills && data.language === "en") {
+                if (data.skills) {
                     source += "\n";
-                    source += "Skills: "+data.skills+"";
-                    source += "\n";
-                }
-                if (data.skills && data.language === "es") {
-                    source += "\n";
-                    source += "Habilidades: "+data.skills+"";
+                    source += this.translations.skills+": "+data.skills+"";
                     source += "\n";
                 }
 
                 source += "\n";
 
-                if (data.working && data.language === "en") {
-                    source += "- 🔭 I’m currently working on "+data.working+" ";
+                if (data.working) {
+                    source += "- 🔭 "+this.translations.working+" "+data.working+" ";
                     source += "\n";
                 }
-                if (data.working && data.language === "es") {
-                    source += "- 🔭 Estoy trabajando en "+data.working+" ";
+                if (data.learning) {
+                    source += "- 🌱 "+this.translations.learning+" "+data.learning+" ";
                     source += "\n";
                 }
-                if (data.learning && data.language === "en") {
-                    source += "- 🌱 I’m currently learning "+data.learning+" ";
+                if (data.collaborate) {
+                    source += "- 👯 "+this.translations.collaborate+" "+data.collaborate+" ";
                     source += "\n";
                 }
-                if (data.learning && data.language === "es") {
-                    source += "- 🌱 Estoy aprendiendo "+data.learning+" ";
+                if (data.help) {
+                    source += "- 🤔 "+this.translations.help+" "+data.help+" ";
                     source += "\n";
                 }
-                if (data.collaborate && data.language === "en") {
-                    source += "- 👯 I’m looking to collaborate on "+data.collaborate+" ";
+                if (data.ask) {
+                    source += "- 💬 "+this.translations.ask+" "+data.ask+" ";
                     source += "\n";
                 }
-                if (data.collaborate && data.language === "es") {
-                    source += "- 👯 Quiero colaborar con "+data.collaborate+" ";
+                if (data.reach) {
+                    source += "- 📫 "+this.translations.reach+": "+data.reach+" ";
                     source += "\n";
                 }
-                if (data.help && data.language === "en") {
-                    source += "- 🤔 I’m looking for help with "+data.help+" ";
+                if (data.pronouns) {
+                    source += "- 😄 "+this.translations.pronouns+": "+data.pronouns+" ";
                     source += "\n";
                 }
-                if (data.help && data.language === "es") {
-                    source += "- 🤔 Necesito ayuda con "+data.help+" ";
-                    source += "\n";
-                }
-                if (data.ask && data.language === "en") {
-                    source += "- 💬 Ask me about "+data.ask+" ";
-                    source += "\n";
-                }
-                if (data.ask && data.language === "es") {
-                    source += "- 💬 Preguntame acerca de "+data.ask+" ";
-                    source += "\n";
-                }
-                if (data.reach && data.language === "en") {
-                    source += "- 📫 How to reach me: "+data.reach+" ";
-                    source += "\n";
-                }
-                if (data.reach && data.language === "es") {
-                    source += "- 📫 Como contactarme: "+data.reach+" ";
-                    source += "\n";
-                }
-                if (data.pronouns && data.language === "en") {
-                    source += "- 😄 Pronouns: "+data.pronouns+" ";
-                    source += "\n";
-                }
-                if (data.pronouns && data.language === "es") {
-                    source += "- 😄 Pronombres: "+data.pronouns+" ";
-                    source += "\n";
-                }
-                if (data.fact && data.language === "en") {
-                    source += "- ⚡ Fun fact: "+data.fact+" ";
-                    source += "\n";
-                }
-                if (data.fact && data.language === "es") {
-                    source += "- ⚡ Dato curioso: "+data.fact+" ";
+                if (data.fact) {
+                    source += "- ⚡ "+this.translations.fact+": "+data.fact+" ";
                     source += "\n";
                 }
 
@@ -266,19 +228,19 @@ new Vue({
                 source += "\n";
 
                 if (data.arctic) {
-                    source += "<a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> ";
+                    source += "<a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> ";
                 }
 		        if (data.devprog) {
-                    source += "<a href='https://docs.github.com/en/developers'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' width='40' height='40'></a> ";
+                    source += "<a href='https://docs.github.com/en/developers'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' width='40' height='40'></a> ";
                 }
 		        if (data.gitpro) {
-                    source += "<a href='https://github.com/pricing'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' width='40' height='40'></a>";
+                    source += "<a href='https://github.com/pricing'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' width='40' height='40'></a> ";
                 }
 				if (data.star) {
-                    source += "<a href='https://stars.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/starbadge.gif' width='35' height='35'></a>";
+                    source += "<a href='https://stars.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/starbadge.gif' width='35' height='35'></a> ";
                 }
 				if (data.sponsor) {
-                    source += "<a href='https://docs.github.com/en/github/supporting-the-open-source-community-with-github-sponsors'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/sponsorbadge.gif' width='35' height='35'></a>";
+                    source += "<a href='https://docs.github.com/en/github/supporting-the-open-source-community-with-github-sponsors'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/sponsorbadge.gif' width='35' height='35'></a> ";
                 }
 		        if (data.arctic || data.devprog || data.gitpro ||data.star || data.sponsor) {
                     source += "\n";
@@ -325,6 +287,69 @@ new Vue({
         copyCode() {
             this.$refs.code.select();
             document.execCommand("copy");
+        },
+        getTranslations: function (data) {
+            let translations = {
+                hiThere: "",
+                skills: "",
+                working: "",
+                learning: "",
+                collaborate: "",
+                help: "",
+                ask: "",
+                reach: "",
+                pronouns: "",
+                fact: ""
+            };
+
+            if (data) {
+                switch(data.language) {
+                    case "en":
+                        translations = {
+                            hiThere: "Hi there",
+                            skills: "Skills",
+                            working: "I’m currently working on",
+                            learning: "I’m currently learning",
+                            collaborate: "I’m looking to collaborate on",
+                            help: "I’m looking for help with",
+                            ask: "Ask me about",
+                            reach: "How to reach me",
+                            pronouns: "Pronouns",
+                            fact: "Fun fact"
+                        }
+                        break;
+                    case "es":
+                        translations = {
+                            hiThere: "Hola",
+                            skills: "Habilidades",
+                            working: "Estoy trabajando en",
+                            learning: "Estoy aprendiendo",
+                            collaborate: "Quiero colaborar con",
+                            help: "Necesito ayuda con",
+                            ask: "Pregúntame acerca de",
+                            reach: "Cómo contactarme",
+                            pronouns: "Pronombres",
+                            fact: "Dato curioso"
+                        }
+                        break;
+                    default:
+                        translations = {
+                            hiThere: "Hi there",
+                            skills: "Skills",
+                            working: "I’m currently working on",
+                            learning: "I’m currently learning",
+                            collaborate: "I’m looking to collaborate on",
+                            help: "I’m looking for help with",
+                            ask: "Ask me about",
+                            reach: "How to reach me",
+                            pronouns: "Pronouns",
+                            fact: "Fun fact"
+                        }
+                        break;
+                }
+            }
+
+            return translations;
         }
     }
 });
