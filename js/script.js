@@ -27,13 +27,14 @@ new Vue({
             forced: false,
             tab: "header",
             data: {
+                language: "en",
                 title: "my name is Arturs",
-                subtitle: "I am GitHub read me generator creator",
-                text: "I made this project just for fun this project allows you to create nice and simple GitHub readme files that you can copy/paste as use in your profile.",
+                subtitle: "I am GitHub Readme Generator's creator",
+                text: "I made this project just for fun, it allows you to create nice and simple GitHub Readme files that you can copy/paste and use in your profile.",
 
                 banner: "https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png",
 
-                skills: "VUE JS / REACT / JS / HTML / CSS",
+                skills: "",
 
                 working: "this page.",
                 learning: "",
@@ -81,7 +82,7 @@ new Vue({
                 this.forced = false;
                 this.source = this.getSource(this.data);
             }
-        },
+        }
     },
     mounted: function(){
         this.source = this.getSource(this.data);
@@ -111,8 +112,12 @@ new Vue({
 
             if (data) {
 
-                if (data.title) {
+                if (data.title && data.language === "en") {
                     source += "### Hi there 👋, "+data.title+"";
+                    source += "\n";
+                }
+                if (data.title && data.language === "es") {
+                    source += "### Hola 👋, "+data.title+"";
                     source += "\n";
                 }
                 if (data.subtitle) {
@@ -128,44 +133,81 @@ new Vue({
                     source += ""+data.text+"";
                     source += "\n";
                 }
-                if (data.skills) {
+                if (data.skills && data.language === "en") {
                     source += "\n";
                     source += "Skills: "+data.skills+"";
+                    source += "\n";
+                }
+                if (data.skills && data.language === "es") {
+                    source += "\n";
+                    source += "Habilidades: "+data.skills+"";
                     source += "\n";
                 }
 
                 source += "\n";
 
-                if (data.working) {
+                if (data.working && data.language === "en") {
                     source += "- 🔭 I’m currently working on "+data.working+" ";
                     source += "\n";
                 }
-                if (data.learning) {
+                if (data.working && data.language === "es") {
+                    source += "- 🔭 Estoy trabajando en "+data.working+" ";
+                    source += "\n";
+                }
+                if (data.learning && data.language === "en") {
                     source += "- 🌱 I’m currently learning "+data.learning+" ";
                     source += "\n";
                 }
-                if (data.collaborate) {
+                if (data.learning && data.language === "es") {
+                    source += "- 🌱 Estoy aprendiendo "+data.learning+" ";
+                    source += "\n";
+                }
+                if (data.collaborate && data.language === "en") {
                     source += "- 👯 I’m looking to collaborate on "+data.collaborate+" ";
                     source += "\n";
                 }
-                if (data.help) {
+                if (data.collaborate && data.language === "es") {
+                    source += "- 👯 Quiero colaborar con "+data.collaborate+" ";
+                    source += "\n";
+                }
+                if (data.help && data.language === "en") {
                     source += "- 🤔 I’m looking for help with "+data.help+" ";
                     source += "\n";
                 }
-                if (data.ask) {
+                if (data.help && data.language === "es") {
+                    source += "- 🤔 Necesito ayuda con "+data.help+" ";
+                    source += "\n";
+                }
+                if (data.ask && data.language === "en") {
                     source += "- 💬 Ask me about "+data.ask+" ";
                     source += "\n";
                 }
-                if (data.reach) {
+                if (data.ask && data.language === "es") {
+                    source += "- 💬 Preguntame acerca de "+data.ask+" ";
+                    source += "\n";
+                }
+                if (data.reach && data.language === "en") {
                     source += "- 📫 How to reach me: "+data.reach+" ";
                     source += "\n";
                 }
-                if (data.pronouns) {
+                if (data.reach && data.language === "es") {
+                    source += "- 📫 Como contactarme: "+data.reach+" ";
+                    source += "\n";
+                }
+                if (data.pronouns && data.language === "en") {
                     source += "- 😄 Pronouns: "+data.pronouns+" ";
                     source += "\n";
                 }
-                if (data.fact) {
+                if (data.pronouns && data.language === "es") {
+                    source += "- 😄 Pronombres: "+data.pronouns+" ";
+                    source += "\n";
+                }
+                if (data.fact && data.language === "en") {
                     source += "- ⚡ Fun fact: "+data.fact+" ";
+                    source += "\n";
+                }
+                if (data.fact && data.language === "es") {
+                    source += "- ⚡ Dato curioso: "+data.fact+" ";
                     source += "\n";
                 }
 

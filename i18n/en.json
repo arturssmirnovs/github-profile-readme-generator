@@ -4,7 +4,7 @@
         "title": "GitHub Profile Readme Generator",
         "description": "Super simple GitHub profile Readme generator made with Vue.js, that allows you to create beautiful Readme files that you can copy/paste in your profile.",
         "callToAction": "What is a GitHub profile Readme? Check out the repository to learn more.",
-        "learnButton": "Learn More"
+        "learnButton": "Learn more"
     },
     "markdownTips": {
         "title": "Markdown Tips:",
@@ -37,7 +37,7 @@
     "additional": {
         "title": "Additional Information",
         "working": "🔭 I’m currently working on...",
-        "workingPlaceholder": "this page.",
+        "workingPlaceholder": "Enter details...",
         "learning": "🌱 I’m currently learning...",
         "learningPlaceholder": "Enter details...",
         "collaborate": "👯 I want to collaborate on...",
@@ -119,5 +119,5 @@
         "copyButton": "Copy"
     },
     "warning": "Changing code manually could result in lost of data if you use generation fields again",
-    "author": "Made with ❤ by "
+    "author": "Made with ❤ by <a href=\"https://github.com/arturssmirnovs\" target=\"_blank\">@arturssmirnovs</a>."
 }

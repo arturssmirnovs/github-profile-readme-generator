@@ -8,9 +8,9 @@
     },
     "markdownTips": {
         "title": "Tips para el marcado:",
-        "bolden": "Para texto en <b>negrillas</b>, reodéalo con dos asteriscos (*) (<code>**<b>palabra</b>**</code>)",
-        "italize": "Para texto en <i>itálicas</i>, reodéalo con un asterisco (*) (<code>*<i>palabra</i>*</code>)",
-        "strikethrough": "Para texto <s>tachado</s>, reodéalo con dos tildes (~) (<code>~~<s>palabra</s>~~</code>)",
+        "bolden": "Para texto en <b>negrillas</b>, rodéalo con dos asteriscos (*) (<code>**<b>palabra</b>**</code>)",
+        "italize": "Para texto en <i>itálicas</i>, rodéalo con un asterisco (*) (<code>*<i>palabra</i>*</code>)",
+        "strikethrough": "Para texto <s>tachado</s>, rodéalo con dos tildes (~) (<code>~~<s>palabra</s>~~</code>)",
         "link": "Para crear un <a href=\"#\">enláce</a>, coloca el enlace entre corchétes y paréntesis (<code>[<a href=\"http://ejemplo.com\">link</a>](http://ejemplo.com)</code>)",
         "icon": "Para una imágen <img class=\"example-icon\" src=\"images/icon.png\" alt=\"icono de ejemplo\"/>, coloca un !, el texto alternativo entre corchetes, y la URL entre paréntesis (<code>![github](/images/icon.png)</code>)",
         "learnMore": "Leer más:"
@@ -37,7 +37,7 @@
     "additional": {
         "title": "Información Adicional",
         "working": "🔭 Estoy trabajando en...",
-        "workingPlaceholder": "esta página.",
+        "workingPlaceholder": "Introduce los detalles...",
         "learning": "🌱 Estoy aprendiendo...",
         "learningPlaceholder": "Introduce los detalles...",
         "collaborate": "👯 Quiero colaborar con...",

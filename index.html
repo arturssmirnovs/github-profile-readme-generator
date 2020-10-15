@@ -34,22 +34,22 @@
     <div id="app" class="container-xl">
         <app-nav>
             <div class="jumbotron">
-                <h1 class="display-5 bold" data-i18n="jumbotron.title">GitHub profile readme generator</h1>
-                <p class="lead" data-i18n="jumbotron.description">Super simple GitHub profile readme generator made with Vue.js, that allows you to create beautiful readme files that you can copy/paste in your profile.</p>
+                <h1 class="display-5 bold" data-i18n="jumbotron.title">GitHub Profile Readme Generator</h1>
+                <p class="lead" data-i18n="jumbotron.description">Super simple GitHub profile Readme generator made with Vue.js, that allows you to create beautiful Readme files that you can copy/paste in your profile.</p>
                 <hr class="my-4">
                 
                 <form id="language">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="languageSelector" id="languageEn" value="en" aria-label="English Selector" checked>
+                        <input class="form-check-input" type="radio" id="languageEn" value="en" v-model="data.language" aria-label="English Selector" checked>
                         <label class="form-check-label" for="languageEn">English</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="languageSelector" id="languageEs" value="es" aria-label="Spanish Selector">
+                        <input class="form-check-input" type="radio" id="languageEs" value="es" v-model="data.language" aria-label="Spanish Selector">
                         <label class="form-check-label" for="languageEs">Español</label>
                     </div>
                 </form>
                 <hr class="my-4">
-                <p data-i18n="jumbotron.callToAction">What is GitHub profile readme? Check out repository to learn more.</p>
+                <p data-i18n="jumbotron.callToAction">What is a GitHub profile Readme? Check out the repository to learn more.</p>
                 <p class="lead mb-0">
                     <a class="btn btn-primary btn-lg" href="https://github.com/arturssmirnovs/github-profile-readme-generator" target="_blank" role="button" data-i18n="jumbotron.learnButton">Learn more</a>
                 </p>
@@ -162,7 +162,7 @@
                                 <input
                                     type="text"
                                     v-model="data.working"
-                                    data-i18n="additional.working additional.workingPlaceholder additional.working"
+                                    data-i18n="additional.workingPlaceholder additional.working"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"
@@ -177,7 +177,7 @@
                                 <input
                                     type="text"
                                     v-model="data.learning"
-                                    data-i18n="additional.learning additional.learningPlaceholder additional.learning"
+                                    data-i18n="additional.learningPlaceholder additional.learning"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"
@@ -192,7 +192,7 @@
                                 <input
                                     type="text"
                                     v-model="data.collaborate"
-                                    data-i18n="additional.collaborate additional.collaboratePlaceholder additional.collaborate"
+                                    data-i18n="additional.collaboratePlaceholder additional.collaborate"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"
@@ -207,7 +207,7 @@
                                 <input
                                     type="text"
                                     v-model="data.help"
-                                    data-i18n="additional.help additional.helpPlaceholder additional.help"
+                                    data-i18n="additional.helpPlaceholder additional.help"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"
@@ -222,7 +222,7 @@
                                 <input
                                     type="text"
                                     v-model="data.ask"
-                                    data-i18n="additional.ask additional.askPlaceholder additional.ask"
+                                    data-i18n="additional.askPlaceholder additional.ask"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"
@@ -237,7 +237,7 @@
                                 <input
                                     type="text"
                                     v-model="data.reach"
-                                    data-i18n="additional.reach additional.reachPlaceholder additional.reach"
+                                    data-i18n="additional.reachPlaceholder additional.reach"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"
@@ -252,7 +252,7 @@
                                 <input
                                     type="text"
                                     v-model="data.pronouns"
-                                    data-i18n="additional.pronouns additional.pronounsPlaceholder additional.pronouns"
+                                    data-i18n="additional.pronounsPlaceholder additional.pronouns"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"
@@ -267,7 +267,7 @@
                                 <input
                                     type="text"
                                     v-model="data.fact"
-                                    data-i18n="additional.fun additional.funPlaceholder additional.fun"
+                                    data-i18n="additional.funPlaceholder additional.fun"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter details..."
                                     class="form-control"

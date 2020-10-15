@@ -98,8 +98,6 @@ class Translator {
         var replace = element => {
             var keys = nullSafeSplit(element.getAttribute("data-i18n"), " ") || [];
             var properties = nullSafeSplit(element.getAttribute("data-i18n-attr"), " ") || ["innerHTML"];
-            console.log(element)
-            console.log(properties)
             if (keys.length > 0 && keys.length !== properties.length) {
                 console.error(
                     "data-i18n and data-i18n-attr must contain the same number of items"
