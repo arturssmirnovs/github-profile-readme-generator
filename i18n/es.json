@@ -117,6 +117,18 @@
         "title": "👨‍💻 Código",
         "copyButton": "Copiar"
     },
+    "markdown": {
+        "hiThere": "Hola",
+        "skills": "Habilidades",
+        "working": "Estoy trabajando en",
+        "learning": "Estoy aprendiendo",
+        "collaborate": "Quiero colaborar con",
+        "help": "Necesito ayuda con",
+        "ask": "Pregúntame acerca de",
+        "reach": "Cómo contactarme",
+        "pronouns": "Pronombres",
+        "fact": "Dato curioso"
+    },
     "warning": "Cambiar el código manualmente puede resultar en pérdida de datos si se usan los campos generadores nuevamente",
     "author": "Hecho con ❤ por <a href=\"https://github.com/arturssmirnovs\" target=\"_blank\">@arturssmirnovs</a>."
 }

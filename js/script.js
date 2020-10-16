@@ -71,9 +71,10 @@ new Vue({
                 website: "",
 
                 items: [],
+
+                translations: ""
             },
-            source: this.getSource(this.data),
-            translations: this.getTranslations(this.data)
+            source: this.getSource(this.data)
         };
     },
     watch: {
@@ -81,17 +82,28 @@ new Vue({
             deep: true,
             handler() {
                 this.forced = false;
-                this.translations = this.getTranslations(this.data);
+                this.getTranslations(this.data);
                 this.source = this.getSource(this.data);
             }
         }
     },
     mounted: function(){
+        this.getTranslations(this.data);
         this.source = this.getSource(this.data);
-        this.translations = this.getTranslations(this.data)
         this.addItem();
     },
     methods: {
+        getTranslations(data) {
+            if (data) {
+                try {
+                    fetch(`../i18n/${data.language}.json`)
+                        .then(r => r.json())
+                        .then(json => this.data.translations = json)
+                  } catch (error) {
+                       console.log(error)
+                }
+            }
+        },
         addItem() {
             this.data.items.push({
                 value: '',
@@ -114,9 +126,9 @@ new Vue({
             let source = '';
 
             if (data) {
-
+                
                 if (data.title) {
-                    source += "### "+this.translations.hiThere+" 👋, "+data.title+"";
+                    source += "### "+data.translations.markdown.hiThere+" 👋, "+data.title+"";
                     source += "\n";
                 }
                 if (data.subtitle) {
@@ -134,42 +146,42 @@ new Vue({
                 }
                 if (data.skills) {
                     source += "\n";
-                    source += this.translations.skills+": "+data.skills+"";
+                    source += data.translations.markdown.skills+": "+data.skills+"";
                     source += "\n";
                 }
 
                 source += "\n";
 
                 if (data.working) {
-                    source += "- 🔭 "+this.translations.working+" "+data.working+" ";
+                    source += "- 🔭 "+data.translations.markdown.working+" "+data.working+" ";
                     source += "\n";
                 }
                 if (data.learning) {
-                    source += "- 🌱 "+this.translations.learning+" "+data.learning+" ";
+                    source += "- 🌱 "+data.translations.markdown.learning+" "+data.learning+" ";
                     source += "\n";
                 }
                 if (data.collaborate) {
-                    source += "- 👯 "+this.translations.collaborate+" "+data.collaborate+" ";
+                    source += "- 👯 "+data.translations.markdown.collaborate+" "+data.collaborate+" ";
                     source += "\n";
                 }
                 if (data.help) {
-                    source += "- 🤔 "+this.translations.help+" "+data.help+" ";
+                    source += "- 🤔 "+data.translations.markdown.help+" "+data.help+" ";
                     source += "\n";
                 }
                 if (data.ask) {
-                    source += "- 💬 "+this.translations.ask+" "+data.ask+" ";
+                    source += "- 💬 "+data.translations.markdown.ask+" "+data.ask+" ";
                     source += "\n";
                 }
                 if (data.reach) {
-                    source += "- 📫 "+this.translations.reach+": "+data.reach+" ";
+                    source += "- 📫 "+data.translations.markdown.reach+": "+data.reach+" ";
                     source += "\n";
                 }
                 if (data.pronouns) {
-                    source += "- 😄 "+this.translations.pronouns+": "+data.pronouns+" ";
+                    source += "- 😄 "+data.translations.markdown.pronouns+": "+data.pronouns+" ";
                     source += "\n";
                 }
                 if (data.fact) {
-                    source += "- ⚡ "+this.translations.fact+": "+data.fact+" ";
+                    source += "- ⚡ "+data.translations.markdown.fact+": "+data.fact+" ";
                     source += "\n";
                 }
 
@@ -287,69 +299,6 @@ new Vue({
         copyCode() {
             this.$refs.code.select();
             document.execCommand("copy");
-        },
-        getTranslations: function (data) {
-            let translations = {
-                hiThere: "",
-                skills: "",
-                working: "",
-                learning: "",
-                collaborate: "",
-                help: "",
-                ask: "",
-                reach: "",
-                pronouns: "",
-                fact: ""
-            };
-
-            if (data) {
-                switch(data.language) {
-                    case "en":
-                        translations = {
-                            hiThere: "Hi there",
-                            skills: "Skills",
-                            working: "I’m currently working on",
-                            learning: "I’m currently learning",
-                            collaborate: "I’m looking to collaborate on",
-                            help: "I’m looking for help with",
-                            ask: "Ask me about",
-                            reach: "How to reach me",
-                            pronouns: "Pronouns",
-                            fact: "Fun fact"
-                        }
-                        break;
-                    case "es":
-                        translations = {
-                            hiThere: "Hola",
-                            skills: "Habilidades",
-                            working: "Estoy trabajando en",
-                            learning: "Estoy aprendiendo",
-                            collaborate: "Quiero colaborar con",
-                            help: "Necesito ayuda con",
-                            ask: "Pregúntame acerca de",
-                            reach: "Cómo contactarme",
-                            pronouns: "Pronombres",
-                            fact: "Dato curioso"
-                        }
-                        break;
-                    default:
-                        translations = {
-                            hiThere: "Hi there",
-                            skills: "Skills",
-                            working: "I’m currently working on",
-                            learning: "I’m currently learning",
-                            collaborate: "I’m looking to collaborate on",
-                            help: "I’m looking for help with",
-                            ask: "Ask me about",
-                            reach: "How to reach me",
-                            pronouns: "Pronouns",
-                            fact: "Fun fact"
-                        }
-                        break;
-                }
-            }
-
-            return translations;
         }
     }
 });

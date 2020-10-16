@@ -118,6 +118,18 @@
         "title": "👨‍💻 Code",
         "copyButton": "Copy"
     },
+    "markdown": {
+        "hiThere": "Hi there",
+        "skills": "Skills",
+        "working": "I’m currently working on",
+        "learning": "I’m currently learning",
+        "collaborate": "I’m looking to collaborate on",
+        "help": "I’m looking for help with",
+        "ask": "Ask me about",
+        "reach": "How to reach me",
+        "pronouns": "Pronouns",
+        "fact": "Fun fact"
+    },
     "warning": "Changing code manually could result in lost of data if you use generation fields again",
     "author": "Made with ❤ by <a href=\"https://github.com/arturssmirnovs\" target=\"_blank\">@arturssmirnovs</a>."
 }
