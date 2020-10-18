@@ -1,0 +1,134 @@
+{
+    "title": "Generador de Readme para Perfiles GitHub - por @arturssmirnovs",
+    "jumbotron": {
+        "title": "Generador de Readme para Perfiles GitHub",
+        "description": "Generador súper simple de archivos Readme para perfiles de GitHub desarrollado con Vue.js, que te permite crear archivos Readme atractivos que puedes copiar/pegar en tu perfil.",
+        "callToAction": "¿Qué es un Readme de perfiles GitHub? revisa el repositorio para leer más.",
+        "learnButton": "Leer más"
+    },
+    "markdownTips": {
+        "title": "Tips para el marcado:",
+        "bolden": "Para texto en <b>negrillas</b>, rodéalo con dos asteriscos (*) (<code>**<b>palabra</b>**</code>)",
+        "italize": "Para texto en <i>itálicas</i>, rodéalo con un asterisco (*) (<code>*<i>palabra</i>*</code>)",
+        "strikethrough": "Para texto <s>tachado</s>, rodéalo con dos tildes (~) (<code>~~<s>palabra</s>~~</code>)",
+        "link": "Para crear un <a href=\"#\">enláce</a>, coloca el enlace entre corchétes y paréntesis (<code>[<a href=\"http://ejemplo.com\">link</a>](http://ejemplo.com)</code>)",
+        "icon": "Para una imágen <img class=\"example-icon\" src=\"images/icon.png\" alt=\"icono de ejemplo\"/>, coloca un !, el texto alternativo entre corchetes, y la URL entre paréntesis (<code>![github](/images/icon.png)</code>)",
+        "learnMore": "Leer más:"
+    },
+    "navbar": {
+        "header": "Cabecera",
+        "additional": "Adicional",
+        "spocial": "Social",
+        "others": "Otros"
+    },
+    "header": {
+        "title": "Cabecera",
+        "heading": "Título",
+        "headingPlaceholder": "Introduce el texto...",
+        "subtitle": "Subtítulo",
+        "subtitlePlaceholder": "Introduce el texto...",
+        "aboutMe": "Acerca de mí",
+        "aboutMePlaceholder": "Introduce el texto...",
+        "skills": "Habilidades",
+        "skillsPlaceholder": "Introduce las habilidades...",
+        "bannerUrl": "URL del banner",
+        "bannerUrlPlaceholder": "Introduce una URL..."
+    },
+    "additional": {
+        "title": "Información Adicional",
+        "working": "🔭 Estoy trabajando en...",
+        "workingPlaceholder": "Introduce los detalles...",
+        "learning": "🌱 Estoy aprendiendo...",
+        "learningPlaceholder": "Introduce los detalles...",
+        "collaborate": "👯 Quiero colaborar con...",
+        "collaboratePlaceholder": "Introduce los detalles...",
+        "help": "🤔 Necesito ayuda con...",
+        "helpPlaceholder": "Introduce los detalles...",
+        "ask": "💬 Preguntame acerca de...",
+        "askPlaceholder": "Introduce los detalles...",
+        "reach": "📫 Como contactarme:",
+        "pronouns": "😄 Pronombres:",
+        "pronounsPlaceholder": "Introduce los detalles...",
+        "fun": "⚡ Dato curioso:",
+        "funPlaceholder": "Introduce los detalles..."
+    },
+    "social": {
+        "title": "Información Social",
+        "github": "GitHub",
+        "githubPlaceholder": "Introduce tu nombre de usuario...",
+        "devto": "Dev.to",
+        "devtoPlaceholder": "Introduce tu nombre de usuario...",
+        "linkedin": "LinkedIn",
+        "linkedinPlaceholder": "Introduce tu nombre de usuario...",
+        "facebook": "Facebook",
+        "facebookPlaceholder": "Introduce tu nombre de usuario...",
+        "instagram": "Instagram",
+        "instagramPlaceholder": "Introduce tu nombre de usuario...",
+        "twitter": "Twitter",
+        "twitterPlaceholder": "Introduce tu nombre de usuario...",
+        "codepen": "Codepen",
+        "codepenPlaceholder": "Introduce tu nombre de usuario...",
+        "codeSandbox": "CodeSandbox",
+        "codeSandboxPlaceholder": "Introduce tu nombre de usuario...",
+        "stackOverflow": "Stack Overflow",
+        "stackOverflowPlaceholder": "Introduce tu ID de usuario...",
+        "youtube": "YouTube",
+        "youtubePlaceholder": "Introduce tu ID de usuario...",
+        "twitch": "Twitch",
+        "twitchPlaceholder": "Introduce tu nombre de usuario...",
+        "reddit": "Reddit",
+        "redditPlaceholder": "Introduce tu nombre de usuario...",
+        "website": "Página web",
+        "websitePlaceholder": "Escribe una URL...",
+        "others": "Otros",
+        "icon": "Ícono",
+        "link": "Enlace",
+        "linkPlaceholder": "Escribe una URL...",
+        "addButton": "Agregar más"
+    },
+    "statistics": {
+        "title": "Estadísticas",
+        "description": "Nombre de usuario de GitHub requerido",
+        "showViews": "Mostrar vistas de perfil",
+        "showLanguages": "Mostrar lenguajes más utilizados",
+        "showStats": "Mostrar estadísticas de GitHub",
+        "includePrivate": "Incluir repositorios privados"
+    },
+    "trophies": {
+        "title": "Trofeos de GitHub",
+        "description": "Nombre de usuario de GitHub requerido",
+        "showTrophies": "Mostrar Trofeos"
+    },
+    "badges": {
+        "title": "Medallas de GitHub",
+        "arctic": "Contribuyente de Ártico",
+        "devProgram": "Programa de Desarrolladores",
+        "starsProgram": "Programa de Estrellas",
+        "sponsor": "Patrocinador",
+        "pro": "GitHub Pro"
+    },
+    "metrics": {
+        "title": "Métricas de GitHub",
+        "description": "Nombre de usuario de GitHub requerido",
+        "showMetrics": "Mostrar métricas de GitHub"
+    },
+    "preview": "Vista previa",
+    "code": {
+        "title": "👨‍💻 Código",
+        "copyButton": "Copiar"
+    },
+    "markdown": {
+        "hiThere": "Hola",
+        "skills": "Habilidades",
+        "working": "Estoy trabajando en",
+        "learning": "Estoy aprendiendo",
+        "collaborate": "Quiero colaborar con",
+        "help": "Necesito ayuda con",
+        "ask": "Pregúntame acerca de",
+        "reach": "Cómo contactarme",
+        "pronouns": "Pronombres",
+        "fact": "Dato curioso"
+    },
+    "warning": "Cambiar el código manualmente puede resultar en pérdida de datos si se usan los campos generadores nuevamente",
+    "author": "Hecho con ❤ por <a href=\"https://github.com/arturssmirnovs\" target=\"_blank\">@arturssmirnovs</a>."
+}
