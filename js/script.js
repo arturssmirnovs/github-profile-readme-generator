@@ -74,7 +74,8 @@ new Vue({
 
                 translations: ""
             },
-            source: this.getSource(this.data)
+            source: "",
+            translator: null
         };
     },
     watch: {
@@ -82,32 +83,45 @@ new Vue({
             deep: true,
             handler() {
                 this.forced = false;
-                this.getTranslations(this.data);
                 this.source = this.getSource(this.data);
             }
         }
     },
     mounted: function(){
-        this.getTranslations(this.data);
-        this.source = this.getSource(this.data);
-        this.addItem();
+        this.getTranslations(this.data.language).then((translations) => {
+            this.data.translations = translations;
+            this.source = this.getSource(this.data);
+            this.addItem();
+        });
+
+        this.translator = new Translator({
+            persist: false,
+            languages: ["en", "es"],
+            defaultLanguage: "en",
+            detectLanguage: true,
+            filesLocation: "i18n"
+        });
+        this.translator.load();
     },
     methods: {
-        getTranslations(data) {
-            if (data) {
-                try {
-                    fetch(`../i18n/${data.language}.json`)
-                        .then(r => r.json())
-                        .then(json => this.data.translations = json)
-                  } catch (error) {
-                       console.log(error)
+        getTranslations(language) {
+            return fetch(`i18n/${language}.json`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 }
-            }
+            }).then(response => response.json());
         },
         addItem() {
             this.data.items.push({
                 value: '',
                 icon: ''
+            });
+        },
+        switchLanguage() {
+            this.translator.load(this.data.language).then((translations) => {
+                this.data.translations = this.translator.translations;
+                this.source = this.getSource(this.data);
             });
         },
         onKeyUp(event) {

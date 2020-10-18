@@ -3,6 +3,7 @@ class Translator {
         this._options = Object.assign({}, this.defaultConfig, options);
         this._elements = document.querySelectorAll("[data-i18n]");
         this._cache = new Map();
+        this.translations = {};
 
         if (this._options.detectLanguage) {
             this._options.defaultLanguage = this._detectLanguage();
@@ -36,6 +37,7 @@ class Translator {
 
     async _getResource(lang) {
         if (this._cache.has(lang)) {
+            this.translations = JSON.parse(this._cache.get(lang));
             return JSON.parse(this._cache.get(lang));
         }
 
@@ -46,6 +48,8 @@ class Translator {
         if (!this._cache.has(lang)) {
             this._cache.set(lang, JSON.stringify(translation));
         }
+
+        this.translations = translation;
 
         return translation;
     }
@@ -130,6 +134,3 @@ class Translator {
         };
     }
 }
-
-export default Translator;
-    

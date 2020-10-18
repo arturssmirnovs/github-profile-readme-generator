@@ -40,11 +40,11 @@
                 
                 <form id="language">
                     <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="languageEn" value="en" v-model="data.language" aria-label="English Selector" checked>
+                        <input class="custom-control-input" type="radio" id="languageEn" value="en" v-model="data.language" v-on:change="switchLanguage" aria-label="English Selector" checked>
                         <label class="custom-control-label" for="languageEn">English</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="languageEs" value="es" v-model="data.language" aria-label="Spanish Selector">
+                        <input class="custom-control-input" type="radio" id="languageEs" value="es" v-model="data.language" v-on:change="switchLanguage" aria-label="Spanish Selector">
                         <label class="custom-control-label" for="languageEs">Español</label>
                     </div>
                 </form>
@@ -728,13 +728,9 @@
     </footer>
 
     <script src="js/vue.js"></script>
-    <script
-  src="https://unpkg.com/@andreasremdt/simple-translator@latest/dist/umd/translator.min.js"
-  defer
-></script>
-    <script type="module" src="js/index.js"></script>
     <script src="js/icons.js"></script>
     <script src="js/markdown.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="js/script.js?v=2"></script>
 </body>
 </html>
