@@ -28,9 +28,9 @@ You can include things like headers, subtitles, skills, a banner image, addition
 
 ### Top Contributors
 
-![@arturssmirnovs](https://github.com/arturssmirnovs)
-![@max-programming](https://github.com/max-programming)
-![@fx2000](https://github.com/fx2000)
+[@arturssmirnovs](https://github.com/arturssmirnovs)
+[@max-programming](https://github.com/max-programming)
+[@fx2000](https://github.com/fx2000)
 
 
 #### Resources Used
