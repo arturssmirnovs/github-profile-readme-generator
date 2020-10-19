@@ -1,5 +1,4 @@
 Vue.use(VueMarkdown);
-
 Vue.component('custom-input', {
     props: ['value', 'title', 'placeholder', 'brand'],
     template: `
@@ -19,7 +18,7 @@ Vue.component('brand-logo', {
       <img v-if="brand" :src="'https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/'+brand+'.svg'" :alt="brand" height='30' class="brand-logo"> &nbsp;
   `
 })
-
+// created vue
 new Vue({
     el: '#app',
     data: function () {
