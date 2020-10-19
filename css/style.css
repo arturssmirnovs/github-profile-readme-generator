@@ -18,13 +18,16 @@ label {
 
 .nav-pills {
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: .25rem; }
+  border-radius: .25rem; 
+}
 
 .tab {
-  padding-top: 30px; }
+  padding-top: 30px;
+}
   .tab h3 {
     text-transform: uppercase;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+}
 
 footer {
   background-color: #e9ecef;
@@ -35,7 +38,8 @@ footer {
   color: #000; }
 
 footer p {
-  margin-bottom: .25rem; }
+  margin-bottom: .25rem; 
+}
 
   .example-icon {
     width: 20px; }
