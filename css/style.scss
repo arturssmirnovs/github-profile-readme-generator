@@ -9,15 +9,18 @@ app-sidebar {
 .jumbotron {
   margin-top: 3rem;
   padding: 2rem 2rem;
-  h1 {
+  h1 
+  {
     font-weight: bold;
   }
 }
-label {
+label 
+{
   font-weight: bold;
   margin-bottom: 10px;
 }
-.nav-pills {
+.nav-pills 
+{
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
 }
@@ -37,10 +40,12 @@ footer {
   color: #000;
 }
 
-footer p {
+footer p 
+{
   margin-bottom: .25rem;
 }
 
-.example-icon {
+.example-icon
+{
   width: 20px;
 }
