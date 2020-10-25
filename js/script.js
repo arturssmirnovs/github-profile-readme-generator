@@ -48,6 +48,7 @@ new Vue({
                 views: false,
                 stats: false,
                 metrics: false,
+                streak: false,
 
                 languages: false,
                 trophy: false,
@@ -299,6 +300,12 @@ new Vue({
 
                 if (data.metrics && data.github) {
                     source += "![GitHub metrics](https://metrics.lecoq.io/"+data.github+")  ";
+                    source += "\n";
+                    source += "\n";
+                }
+
+                if (data.streak && data.github) {
+                    source += "![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user="+data.github+")  ";
                     source += "\n";
                     source += "\n";
                 }
