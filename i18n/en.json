@@ -1,0 +1,135 @@
+{
+    "title": "GitHub Profile Readme Generator - by @arturssmirnovs",
+    "jumbotron": {
+        "title": "GitHub Profile Readme Generator",
+        "description": "Super simple GitHub profile Readme generator made with Vue.js, that allows you to create beautiful Readme files that you can copy/paste in your profile.",
+        "callToAction": "What is a GitHub profile Readme? Check out the repository to learn more.",
+        "learnButton": "Learn more"
+    },
+    "markdownTips": {
+        "title": "Markdown Tips:",
+        "bolden": "To <b>bolden</b> the text, wrap it with two asterisks (*) (<code>**<b>word</b>**</code>)",
+        "italize": "To <i>italisize</i> the text, wrap it with one asterisk (*) (<code>*<i>word</i>*</code>)",
+        "strikethrough": "To <s>strikethrough</s> the text, wrap it with two tildes (~) (<code>~~<s>word</s>~~</code>)",
+        "link": "To make a <a href=\"#\">link</a>, place the link text in brackets and the url in parentheses (<code>[<a href=\"http://example.com\">link</a>](http://example.com)</code>)",
+        "icon": "To make an <img class=\"example-icon\" src=\"images/icon.png\" alt=\"example icon\"/> image, place an !, the alt text in brackets, and the url in parentheses (<code>![github](/images/icon.png)</code>)",
+        "learnMore": "Learn more:"
+    },
+    "navbar": {
+        "header": "Header",
+        "additional": "Additional",
+        "spocial": "Social",
+        "others": "Others"
+    },
+    "header": {
+        "title": "Header",
+        "heading": "Heading",
+        "headingPlaceholder": "Enter text...",
+        "subtitle": "Subtitle",
+        "subtitlePlaceholder": "Enter text...",
+        "aboutMe": "About me",
+        "aboutMePlaceholder": "Enter text...",
+        "skills": "Skills",
+        "skillsPlaceholder": "Enter skills...",
+        "bannerUrl": "Banner URL",
+        "bannerUrlPlaceholder": "Enter URL..."
+    },
+    "additional": {
+        "title": "Additional Information",
+        "working": "🔭 I’m currently working on...",
+        "workingPlaceholder": "Enter details...",
+        "learning": "🌱 I’m currently learning...",
+        "learningPlaceholder": "Enter details...",
+        "collaborate": "👯 I want to collaborate on...",
+        "collaboratePlaceholder": "Enter details...",
+        "help": "🤔 I’m looking for help with...",
+        "helpPlaceholder": "Enter details...",
+        "ask": "💬 Ask me about...",
+        "askPlaceholder": "Enter details...",
+        "reach": "📫 How to reach me:",
+        "reachPlaceholder": "Enter details...",
+        "pronouns": "😄 Pronouns:",
+        "pronounsPlaceholder": "Enter details...",
+        "fun": "⚡ Fun fact:",
+        "funPlaceholder": "Enter details..."
+    },
+    "social": {
+        "title": "Social Information",
+        "github": "GitHub",
+        "githubPlaceholder": "Enter your username...",
+        "devto": "Dev.to",
+        "devtoPlaceholder": "Enter your username...",
+        "linkedin": "LinkedIn",
+        "linkedinPlaceholder": "Enter your username...",
+        "facebook": "Facebook",
+        "facebookPlaceholder": "Enter your username...",
+        "instagram": "Instagram",
+        "instagramPlaceholder": "Enter your username...",
+        "twitter": "Twitter",
+        "twitterPlaceholder": "Enter your username...",
+        "codepen": "Codepen",
+        "codepenPlaceholder": "Enter your username...",
+        "codeSandbox": "CodeSandbox",
+        "codeSandboxPlaceholder": "Enter your username...",
+        "stackOverflow": "Stack Overflow",
+        "stackOverflowPlaceholder": "Enter your user ID...",
+        "youtube": "YouTube",
+        "youtubePlaceholder": "Enter your user ID...",
+        "twitch": "Twitch",
+        "twitchPlaceholder": "Enter your username...",
+        "reddit": "Reddit",
+        "redditPlaceholder": "Enter your username...",
+        "website": "Website",
+        "websitePlaceholder": "Enter URL...",
+        "others": "Others",
+        "icon": "Icon",
+        "link": "Link",
+        "linkPlaceholder": "Enter URL...",
+        "addButton": "Add more"
+    },
+    "statistics": {
+        "title": "Statistics",
+        "description": "GitHub username required",
+        "showViews": "Show profile views",
+        "showLanguages": "Show most used languages",
+        "showStats": "Show GitHub statistics",
+        "includePrivate": "Include private repositories"
+    },
+    "trophies": {
+        "title": "GitHub Trophies",
+        "description": "GitHub username required",
+        "showTrophies": "Show Trophies"
+    },
+    "badges": {
+        "title": "GitHub Badges",
+        "arctic": "Arctic Contributor",
+        "devProgram": "Developer Program",
+        "starsProgram": "Stars Program",
+        "sponsor": "Sponsor",
+        "pro": "GitHub Pro"
+    },
+    "metrics": {
+        "title": "GitHub Metrics",
+        "description": "GitHub username required",
+        "showMetrics": "Show GitHub metrics"
+    },
+    "preview": "Preview",
+    "code": {
+        "title": "👨‍💻 Code",
+        "copyButton": "Copy"
+    },
+    "markdown": {
+        "hiThere": "Hi there",
+        "skills": "Skills",
+        "working": "I’m currently working on",
+        "learning": "I’m currently learning",
+        "collaborate": "I’m looking to collaborate on",
+        "help": "I’m looking for help with",
+        "ask": "Ask me about",
+        "reach": "How to reach me",
+        "pronouns": "Pronouns",
+        "fact": "Fun fact"
+    },
+    "warning": "Changing code manually could result in lost of data if you use generation fields again",
+    "author": "Made with ❤ by <a href=\"https://github.com/arturssmirnovs\" target=\"_blank\">@arturssmirnovs</a>."
+}

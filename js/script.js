@@ -13,6 +13,13 @@ Vue.component('custom-input', {
   `
 })
 
+Vue.component('brand-logo', {
+    props: ['brand'],
+    template: `
+      <img v-if="brand" :src="'https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/'+brand+'.svg'" :alt="brand" height='30' class="brand-logo"> &nbsp;
+  `
+})
+
 new Vue({
     el: '#app',
     data: function () {
@@ -20,9 +27,10 @@ new Vue({
             forced: false,
             tab: "header",
             data: {
+                language: "en",
                 title: "my name is Arturs",
-                subtitle: "I am GitHub read me generator creator",
-                text: "I made this project just for fun this project allows you to create nice and simple GitHub readme files that you can copy/paste as use in your profile.",
+                subtitle: "I am GitHub Readme Generator's creator",
+                text: "I made this project just for fun, it allows you to create nice and simple GitHub Readme files that you can copy/paste and use in your profile.",
 
                 banner: "https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png",
 
@@ -39,6 +47,7 @@ new Vue({
 
                 views: false,
                 stats: false,
+                metrics: false,
 
                 languages: false,
                 trophy: false,
@@ -62,8 +71,11 @@ new Vue({
                 website: "",
 
                 items: [],
+
+                translations: ""
             },
-            source: this.getSource(this.data),
+            source: "",
+            translator: null
         };
     },
     watch: {
@@ -73,17 +85,43 @@ new Vue({
                 this.forced = false;
                 this.source = this.getSource(this.data);
             }
-        },
+        }
     },
     mounted: function(){
-        this.source = this.getSource(this.data);
-        this.addItem();
+        this.getTranslations(this.data.language).then((translations) => {
+            this.data.translations = translations;
+            this.source = this.getSource(this.data);
+            this.addItem();
+        });
+
+        this.translator = new Translator({
+            persist: false,
+            languages: ["en", "es"],
+            defaultLanguage: "en",
+            detectLanguage: true,
+            filesLocation: "i18n"
+        });
+        this.translator.load();
     },
     methods: {
+        getTranslations(language) {
+            return fetch(`i18n/${language}.json`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }).then(response => response.json());
+        },
         addItem() {
             this.data.items.push({
                 value: '',
                 icon: ''
+            });
+        },
+        switchLanguage() {
+            this.translator.load(this.data.language).then((translations) => {
+                this.data.translations = this.translator.translations;
+                this.source = this.getSource(this.data);
             });
         },
         onKeyUp(event) {
@@ -102,9 +140,9 @@ new Vue({
             let source = '';
 
             if (data) {
-
+                
                 if (data.title) {
-                    source += "### Hi there 👋, "+data.title+"";
+                    source += "### "+data.translations.markdown.hiThere+" 👋, "+data.title+"";
                     source += "\n";
                 }
                 if (data.subtitle) {
@@ -122,42 +160,42 @@ new Vue({
                 }
                 if (data.skills) {
                     source += "\n";
-                    source += "Skills: "+data.skills+"";
+                    source += data.translations.markdown.skills+": "+data.skills+"";
                     source += "\n";
                 }
 
                 source += "\n";
 
                 if (data.working) {
-                    source += "- 🔭 I’m currently working on "+data.working+" ";
+                    source += "- 🔭 "+data.translations.markdown.working+" "+data.working+" ";
                     source += "\n";
                 }
                 if (data.learning) {
-                    source += "- 🌱 I’m currently learning "+data.learning+" ";
+                    source += "- 🌱 "+data.translations.markdown.learning+" "+data.learning+" ";
                     source += "\n";
                 }
                 if (data.collaborate) {
-                    source += "- 👯 I’m looking to collaborate on "+data.collaborate+" ";
+                    source += "- 👯 "+data.translations.markdown.collaborate+" "+data.collaborate+" ";
                     source += "\n";
                 }
                 if (data.help) {
-                    source += "- 🤔 I’m looking for help with "+data.help+" ";
+                    source += "- 🤔 "+data.translations.markdown.help+" "+data.help+" ";
                     source += "\n";
                 }
                 if (data.ask) {
-                    source += "- 💬 Ask me about "+data.ask+" ";
+                    source += "- 💬 "+data.translations.markdown.ask+" "+data.ask+" ";
                     source += "\n";
                 }
                 if (data.reach) {
-                    source += "- 📫 How to reach me: "+data.reach+" ";
+                    source += "- 📫 "+data.translations.markdown.reach+": "+data.reach+" ";
                     source += "\n";
                 }
                 if (data.pronouns) {
-                    source += "- 😄 Pronouns: "+data.pronouns+" ";
+                    source += "- 😄 "+data.translations.markdown.pronouns+": "+data.pronouns+" ";
                     source += "\n";
                 }
                 if (data.fact) {
-                    source += "- ⚡ Fun fact: "+data.fact+" ";
+                    source += "- ⚡ "+data.translations.markdown.fact+": "+data.fact+" ";
                     source += "\n";
                 }
 
@@ -216,19 +254,19 @@ new Vue({
                 source += "\n";
 
                 if (data.arctic) {
-                    source += "<a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> ";
+                    source += "<a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> ";
                 }
 		        if (data.devprog) {
-                    source += "<a href='https://docs.github.com/en/developers'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' width='40' height='40'></a> ";
+                    source += "<a href='https://docs.github.com/en/developers'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' width='40' height='40'></a> ";
                 }
 		        if (data.gitpro) {
-                    source += "<a href='https://github.com/pricing'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' width='40' height='40'></a>";
+                    source += "<a href='https://github.com/pricing'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' width='40' height='40'></a> ";
                 }
 				if (data.star) {
-                    source += "<a href='https://stars.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/starbadge.gif' width='35' height='35'></a>";
+                    source += "<a href='https://stars.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/starbadge.gif' width='35' height='35'></a> ";
                 }
 				if (data.sponsor) {
-                    source += "<a href='https://docs.github.com/en/github/supporting-the-open-source-community-with-github-sponsors'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/sponsorbadge.gif' width='35' height='35'></a>";
+                    source += "<a href='https://docs.github.com/en/github/supporting-the-open-source-community-with-github-sponsors'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/sponsorbadge.gif' width='35' height='35'></a> ";
                 }
 		        if (data.arctic || data.devprog || data.gitpro ||data.star || data.sponsor) {
                     source += "\n";
@@ -258,7 +296,13 @@ new Vue({
                     source += "\n";
                     source += "\n";
                 }
-		    
+
+                if (data.metrics && data.github) {
+                    source += "![GitHub metrics](https://metrics.lecoq.io/"+data.github+")  ";
+                    source += "\n";
+                    source += "\n";
+                }
+
                 if (data.views && data.github) {
                     source += "![Profile views](https://gpvc.arturio.dev/"+data.github+")  ";
                 }
