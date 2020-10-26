@@ -112,6 +112,11 @@
         "description": "Nombre de usuario de GitHub requerido",
         "showMetrics": "Mostrar métricas de GitHub"
     },
+    "streak": {
+        "title": "Racha de GitHub",
+        "description": "Nombre de usuario de GitHub requerido",
+        "showStreak": "Mostrar racha de GitHub"
+    },
     "preview": "Vista previa",
     "code": {
         "title": "👨‍💻 Código",

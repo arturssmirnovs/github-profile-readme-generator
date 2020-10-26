@@ -113,6 +113,11 @@
         "description": "GitHub username required",
         "showMetrics": "Show GitHub metrics"
     },
+    "streak": {
+        "title": "GitHub Streak Stats",
+        "description": "GitHub username required",
+        "showStreak": "Show GitHub Streak Stats"
+    },
     "preview": "Preview",
     "code": {
         "title": "👨‍💻 Code",

@@ -304,7 +304,7 @@
                             <div class="form-group">
                                 <div class="social-title">
                                     <brand-logo brand="dev-dot-to"></brand-logo>
-                                    <label data-i18n="social.devto">DEV.TOoo</label>
+                                    <label data-i18n="social.devto">DEV.TO</label>
                                 </div>
                                 <input
                                     type="text"
@@ -416,7 +416,7 @@
                                 </div>
                                 <input
                                     type="text"
-                                    v-model="data.codeSandbox"
+                                    v-model="data.codesandbox"
                                     data-i18n="social.codeSandboxPlaceholder social.codeSandbox"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter your username..."
@@ -434,7 +434,7 @@
                                 </div>
                                 <input
                                     type="text"
-                                    v-model="data.stackOverflow"
+                                    v-model="data.stackoverflow"
                                     data-i18n="social.stackOverflowPlaceholder social.stackOverflow"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter your user ID..."
@@ -458,24 +458,6 @@
                                     placeholder="Enter your user ID..."
                                     class="form-control"
                                     aria-label="YouTube"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6">
-                            <div class="form-group">
-                                <div class="social-title">
-                                    <brand-logo brand="codesandbox"></brand-logo>
-                                    <label data-i18n="social.codeSandbox">CodeSandbox</label>
-                                </div>
-                                <input
-                                    type="text"
-                                    v-model="data.codeSandbox"
-                                    data-i18n="social.codeSandboxPlaceholder social.codeSandbox"
-                                    data-i18n-attr="placeholder aria-label"
-                                    placeholder="Enter your username..."
-                                    class="form-control"
-                                    aria-label="CodeSandbox"
                                 />
                             </div>
                         </div>
@@ -509,7 +491,7 @@
                                     v-model="data.website"
                                     data-i18n="social.websitePlaceholder social.website"
                                     data-i18n-attr="placeholder aria-label"
-                                    placeholder="Enter your username..."
+                                    placeholder="Enter URL..."
                                     class="form-control"
                                     aria-label="Website"
                                 />
@@ -681,6 +663,22 @@
                                     for="customCheck10"
                                     data-i18n="metrics.showMetrics"
                                 >Show GitHub metrics</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-3" data-i18n="streak.title">GitHub Streak Stats</h3>
+                    <p data-i18n="streak.description">GitHub username required.</p>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck11" v-model="data.streak">
+                                <label
+                                    class="custom-control-label"
+                                    for="customCheck11"
+                                    data-i18n="streak.showStreak"
+                                >Show GitHub Streak Stats</label>
                             </div>
                         </div>
                     </div>

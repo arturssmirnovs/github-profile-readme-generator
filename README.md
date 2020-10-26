@@ -37,8 +37,9 @@ You can include things like headers, subtitles, skills, a banner image, addition
 
 | Name                  | Repository Link                                                |
 | ---------------------------------|--------------------------------------------------------------- |
-| _Github Readme Status_           | https://github.com/anuraghazra/github-readme-stats             |
+| _Github Readme Stats_            | https://github.com/anuraghazra/github-readme-stats             |
 | _Github Profile Views Counter_   | https://github.com/arturssmirnovs/github-profile-views-counter |
 | _Github Profile Trophy_          | https://github.com/ryo-ma/github-profile-trophy                |
+| _Github Readme Streak Stats_     | https://github.com/DenverCoder1/github-readme-streak-stats     |
 | _Simple icons_                   | https://github.com/simple-icons/simple-icons                   |
 | _Simple Translator_              | https://github.com/andreasremdt/simple-translator              |
