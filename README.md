@@ -31,6 +31,7 @@ You can include things like headers, subtitles, skills, a banner image, addition
 [@arturssmirnovs](https://github.com/arturssmirnovs)
 [@max-programming](https://github.com/max-programming)
 [@fx2000](https://github.com/fx2000)
+[@DenverCoder1](https://github.com/DenverCoder1)
 
 
 #### Resources Used
