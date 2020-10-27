@@ -56,6 +56,9 @@ new Vue({
                 arctic: false,
                 devprog: false,
                 pro: false,
+                star: false,
+                sponsor: false,
+                gitpro: false,
 
                 github: "",
                 dev: "",
@@ -84,6 +87,7 @@ new Vue({
             deep: true,
             handler() {
                 this.forced = false;
+                this.github = this.githubWatcher(this.data.github);
                 this.source = this.getSource(this.data);
             }
         }
@@ -105,6 +109,25 @@ new Vue({
         this.translator.load();
     },
     methods: {
+        githubWatcher(github) {
+            if (!github) {
+                this.data.views = false;
+                this.data.stats = false;
+                this.data.private = false;
+                this.data.metrics = false;
+                this.data.streak = false;
+                this.data.languages = false;
+                this.data.trophy = false;
+                this.data.arctic = false;
+                this.data.devprog = false;
+                this.data.pro = false;
+                this.data.star = false;
+                this.data.sponsor = false;
+                this.data.gitpro = false;
+            }
+
+            return github;
+        },
         getTranslations(language) {
             return fetch(`i18n/${language}.json`, {
                 headers: {
