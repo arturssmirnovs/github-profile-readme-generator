@@ -1,8 +1,6 @@
 # Github Readme Generator
 ### Hi there 👋.
 
-#### Contributions in this [2020 Hacktoberfest](https://hacktoberfest.digitalocean.com/) time are very welcomed! #hacktoberfest
-
 ⭐⭐⭐ [Check out this tool here.](https://arturssmirnovs.github.io/github-profile-readme-generator/)
 
 ![Github Readme Generator](https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png)
