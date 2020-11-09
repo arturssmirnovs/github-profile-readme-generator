@@ -20,6 +20,17 @@ Vue.component('brand-logo', {
   `
 })
 
+Vue.component('theme-option', {
+    props: ['optionId', 'value', 'label'],
+    template: `
+        <div class="custom-control custom-radio">
+            <input class="custom-control-input" type="radio" :id="optionId" :value="value" v-model="data.theme" v-on:change="changeTheme" checked v-if="optionId === 'themeDefault'">
+            <input class="custom-control-input" type="radio" :id="optionId" :value="value" v-model="data.theme" v-on:change="changeTheme" v-else>
+            <label class="custom-control-label" :for="optionId">{{ label }}</label>
+        </div>
+    `
+})
+
 new Vue({
     el: '#app',
     data: function () {
@@ -28,6 +39,7 @@ new Vue({
             tab: "header",
             data: {
                 language: "en",
+                theme: "default",
                 title: "my name is Arturs",
                 subtitle: "I am GitHub Readme Generator's creator",
                 text: "I made this project just for fun, it allows you to create nice and simple GitHub Readme files that you can copy/paste and use in your profile.",
@@ -62,6 +74,7 @@ new Vue({
 
                 github: "",
                 dev: "",
+                hashnode: "",
                 linkedin: "",
                 facebook: "",
                 instagram: "",
@@ -148,6 +161,9 @@ new Vue({
                 this.source = this.getSource(this.data);
             });
         },
+        changeTheme() {
+            console.log('heyyy!')
+        },
         onKeyUp(event) {
             this.forced = true;
         },
@@ -231,6 +247,9 @@ new Vue({
                 }
                 if (data.dev) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/dev-dot-to.svg' alt='dev' height='40'>](https://dev.to/"+data.dev+")  ";
+                }
+                if (data.hashnode) {
+                    source += `[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/hashnode.svg' alt='dev' height='40'>](${data.hashnode})  `;
                 }
                 if (data.linkedin) {
                     source += "[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/"+data.linkedin+"/)  ";
