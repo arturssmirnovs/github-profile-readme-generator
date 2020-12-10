@@ -23,7 +23,8 @@
     <meta property="og:site_name" content="artuurs.smirnovs" />
 
     <link href="https://arturssmirnovs.github.io/github-profile-readme-generator/" rel="canonical" />
-    <link rel="icon" type="image/png" href="images/icon.png" />
+    <!-- <link rel="icon" type="image/png" href="images/icon.png" /> -->
+    <link rel="shortcut icon" href="./images/github-light.png" type="image/x-icon" id="faviconTag">
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/vue-simple-markdown.css" />
@@ -767,5 +768,15 @@
     <script src="js/markdown.js"></script>
     <script src="js/translator.js"></script>
     <script src="js/script.js?v=2"></script>
+    <script>
+        const faviconTag = document.getElementById("faviconTag");
+        const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+        const changeFavicon = () => {
+            if (isDark.matches) faviconTag.href = "./images/github-dark.png";
+            else faviconTag.href = "./images/github-light.png";
+        };
+        changeFavicon();
+        setInterval(changeFavicon, 1000);
+    </script>
 </body>
 </html>
