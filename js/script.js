@@ -323,7 +323,7 @@ new Vue({
                 }
 
                 if (data.languages && data.github) {
-                    source += `[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=${github})](https://github.com/anuraghazra/github-readme-stats)`;
+                    source += `[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=${data.github})](https://github.com/anuraghazra/github-readme-stats)`;
                     source += "\n";
                     source += "\n";
                 }
