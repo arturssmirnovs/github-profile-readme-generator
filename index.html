@@ -775,8 +775,10 @@
             if (isDark.matches) faviconTag.href = "./images/github-dark.png";
             else faviconTag.href = "./images/github-light.png";
         };
+        
         changeFavicon();
-        setInterval(changeFavicon, 1000);
+        
+        isDark.addEventListener('change', changeFavicon);
     </script>
 </body>
 </html>
