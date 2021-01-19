@@ -95,6 +95,7 @@
         "showViews": "Show profile views",
         "showLanguages": "Show most used languages",
         "showStats": "Show GitHub statistics",
+        "activityGraph": "Show GitHub Activity Graph",
         "includePrivate": "Include private repositories"
     },
     "trophies": {

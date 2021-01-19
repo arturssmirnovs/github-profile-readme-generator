@@ -94,6 +94,7 @@
         "showViews": "Mostrar vistas de perfil",
         "showLanguages": "Mostrar lenguajes más utilizados",
         "showStats": "Mostrar estadísticas de GitHub",
+        "activityGraph": "Mostrar gráfico de actividad de GitHub",
         "includePrivate": "Incluir repositorios privados"
     },
     "trophies": {

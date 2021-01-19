@@ -600,6 +600,16 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="activityStats" v-model="data.activityGraph" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="activityStats"
+                                            data-i18n="statistics.activityGraph"
+                                    >Show GitHub Activity Graph</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
                                     <input type="checkbox" class="custom-control-input" id="customCheck3" v-model="data.languages" :disabled="!data.github">
                                     <label
                                             class="custom-control-label"

@@ -59,6 +59,7 @@ new Vue({
 
                 views: false,
                 stats: false,
+                activityGraph: false,
                 metrics: false,
                 streak: false,
 
@@ -126,6 +127,7 @@ new Vue({
             if (!github) {
                 this.data.views = false;
                 this.data.stats = false;
+                this.data.activityGraph = false;
                 this.data.private = false;
                 this.data.metrics = false;
                 this.data.streak = false;
@@ -336,6 +338,12 @@ new Vue({
 
                 if (data.stats && data.github && data.private) {
                     source += `![GitHub stats](https://github-readme-stats.vercel.app/api?username=${data.github}&show_icons=true&count_private=true)  `;
+                    source += "\n";
+                    source += "\n";
+                }
+
+                if (data.activityGraph && data.github) {
+                    source += `![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=${data.github})  `;
                     source += "\n";
                     source += "\n";
                 }
