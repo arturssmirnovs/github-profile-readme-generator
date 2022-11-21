@@ -23,7 +23,8 @@
     <meta property="og:site_name" content="artuurs.smirnovs" />
 
     <link href="https://arturssmirnovs.github.io/github-profile-readme-generator/" rel="canonical" />
-    <link rel="icon" type="image/png" href="images/icon.png" />
+    <!-- <link rel="icon" type="image/png" href="images/icon.png" /> -->
+    <link rel="shortcut icon" href="./images/github-light.png" type="image/x-icon" id="faviconTag">
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/vue-simple-markdown.css" />
@@ -304,7 +305,7 @@
                             <div class="form-group">
                                 <div class="social-title">
                                     <brand-logo brand="dev-dot-to"></brand-logo>
-                                    <label data-i18n="social.devto">DEV.TOoo</label>
+                                    <label data-i18n="social.devto">DEV.TO</label>
                                 </div>
                                 <input
                                     type="text"
@@ -314,6 +315,24 @@
                                     placeholder="Enter username..."
                                     class="form-control"
                                     aria-label="DEV.TO"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6">                        
+                            <div class="form-group">
+                                <div class="social-title">
+                                    <brand-logo brand="hashnode"></brand-logo>
+                                    <label data-i18n="social.hashnode">Hashnode</label>
+                                </div>
+                                <input
+                                    type="text"
+                                    v-model="data.hashnode"
+                                    data-i18n="social.hashnodePlaceholder social.hashnode"
+                                    data-i18n-attr="placeholder aria-label"
+                                    placeholder="Enter blog URL..."
+                                    class="form-control"
+                                    aria-label="Hashnode"
                                 />
                             </div>
                         </div>
@@ -416,7 +435,7 @@
                                 </div>
                                 <input
                                     type="text"
-                                    v-model="data.codeSandbox"
+                                    v-model="data.codesandbox"
                                     data-i18n="social.codeSandboxPlaceholder social.codeSandbox"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter your username..."
@@ -434,7 +453,7 @@
                                 </div>
                                 <input
                                     type="text"
-                                    v-model="data.stackOverflow"
+                                    v-model="data.stackoverflow"
                                     data-i18n="social.stackOverflowPlaceholder social.stackOverflow"
                                     data-i18n-attr="placeholder aria-label"
                                     placeholder="Enter your user ID..."
@@ -458,24 +477,6 @@
                                     placeholder="Enter your user ID..."
                                     class="form-control"
                                     aria-label="YouTube"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6">
-                            <div class="form-group">
-                                <div class="social-title">
-                                    <brand-logo brand="codesandbox"></brand-logo>
-                                    <label data-i18n="social.codeSandbox">CodeSandbox</label>
-                                </div>
-                                <input
-                                    type="text"
-                                    v-model="data.codeSandbox"
-                                    data-i18n="social.codeSandboxPlaceholder social.codeSandbox"
-                                    data-i18n-attr="placeholder aria-label"
-                                    placeholder="Enter your username..."
-                                    class="form-control"
-                                    aria-label="CodeSandbox"
                                 />
                             </div>
                         </div>
@@ -509,7 +510,7 @@
                                     v-model="data.website"
                                     data-i18n="social.websitePlaceholder social.website"
                                     data-i18n-attr="placeholder aria-label"
-                                    placeholder="Enter your username..."
+                                    placeholder="Enter URL..."
                                     class="form-control"
                                     aria-label="Website"
                                 />
@@ -552,135 +553,180 @@
                 </div>
 
                 <div v-show="tab == 'stats'" class="tab">
-                    <h3 data-i18n="statistics.title">Statistics</h3>
-                    <p data-i18n="statistics.description">GitHub username required</p>
 
                     <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1" v-model="data.views">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck1"
-                                    data-i18n="statistics.showViews"
-                                >Show profile views</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2" v-model="data.stats">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck2"
-                                    data-i18n="statistics.showStats"
-                                >Show GitHub statistics</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3" v-model="data.languages">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck3"
-                                    data-i18n="statistics.showLanguages"
-                                >Show most used languages</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="defaultCheck4" v-model="data.private" :disabled="!data.stats">
-                                <label
-                                    class="custom-control-label"
-                                    for="defaultCheck4"
-                                    data-i18n="statistics.includePrivate"
-                                >Include private repositories</label>
+                        <div class="col-xs-12 col-md-12">
+                            <div class="form-group mb-4">
+                                <div class="social-title">
+                                    <label data-i18n="social.github">GitHub</label>
+                                </div>
+                                <input
+                                        type="text"
+                                        v-model="data.github"
+                                        data-i18n="social.githubPlaceholder social.github"
+                                        data-i18n-attr="placeholder aria-label"
+                                        placeholder="Enter your username..."
+                                        class="form-control mb-2"
+                                        aria-label="Github"
+                                />
+                                <p data-i18n="statistics.description">GitHub username required</p>
                             </div>
                         </div>
                     </div>
 
-                    <h3 class="mt-3" data-i18n="trophies.title">Github Trophies</h3>
-                    <p data-i18n="trophies.description">GitHub username required</p>
+                    <div v-bind:class="[data.github ? 'social-stats active' : 'social-stats disabled']">
+                        <h3 data-i18n="statistics.title">Statistics</h3>
 
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck4" v-model="data.trophy">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck4"
-                                    data-i18n="trophies.showTrophies"
-                                >Show Trophies</label>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" v-model="data.views" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck1"
+                                            data-i18n="statistics.showViews"
+                                    >Show profile views</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2" v-model="data.stats" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck2"
+                                            data-i18n="statistics.showStats"
+                                    >Show GitHub statistics</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="activityStats" v-model="data.activityGraph" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="activityStats"
+                                            data-i18n="statistics.activityGraph"
+                                    >Show GitHub Activity Graph</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck3" v-model="data.languages" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck3"
+                                            data-i18n="statistics.showLanguages"
+                                    >Show most used languages</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="defaultCheck4" v-model="data.private" :disabled="!data.stats" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="defaultCheck4"
+                                            data-i18n="statistics.includePrivate"
+                                    >Include private repositories</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <h3 class="mt-3" data-i18n="badges.title">Github Badges</h3>
+                        <h3 class="mt-3" data-i18n="trophies.title">Github Trophies</h3>
 
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck5" v-model="data.arctic">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck5"
-                                    data-i18n="badges.arctic"
-                                >Arctic Contributor</label>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck4" v-model="data.trophy" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck4"
+                                            data-i18n="trophies.showTrophies"
+                                    >Show Trophies</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck6" v-model="data.devprog">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck6"
-                                    data-i18n="badges.devProgram"
-                                >Developer Program</label>
-                            </div>
-                        </div>
-			            <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck7" v-model="data.star">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck7"
-                                    data-i18n="badges.starsProgram"
-                                >Stars Program</label>
-                            </div>
-                        </div>
-			            <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck8" v-model="data.sponsor">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck8"
-                                    data-i18n="badges.sponsor"
-                                >Sponsor</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck9" v-model="data.gitpro">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck9"
-                                    data-i18n="badges.pro"
-                                >Github Pro</label>
-                            </div>
-                        </div>
-                    </div>
 
-                    <h3 class="mt-3" data-i18n="metrics.title">GitHub Metrics</h3>
-                    <p data-i18n="metrics.description">GitHub username required.</p>
+                        <h3 class="mt-3" data-i18n="badges.title">Github Badges</h3>
 
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck10" v-model="data.metrics">
-                                <label
-                                    class="custom-control-label"
-                                    for="customCheck10"
-                                    data-i18n="metrics.showMetrics"
-                                >Show GitHub metrics</label>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck5" v-model="data.arctic" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck5"
+                                            data-i18n="badges.arctic"
+                                    >Arctic Contributor</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck6" v-model="data.devprog" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck6"
+                                            data-i18n="badges.devProgram"
+                                    >Developer Program</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck7" v-model="data.star" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck7"
+                                            data-i18n="badges.starsProgram"
+                                    >Stars Program</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck8" v-model="data.sponsor" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck8"
+                                            data-i18n="badges.sponsor"
+                                    >Sponsor</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck9" v-model="data.gitpro" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck9"
+                                            data-i18n="badges.pro"
+                                    >Github Pro</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-3" data-i18n="metrics.title">GitHub Metrics</h3>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck10" v-model="data.metrics" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck10"
+                                            data-i18n="metrics.showMetrics"
+                                    >Show GitHub metrics</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-3" data-i18n="streak.title">GitHub Streak Stats</h3>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck11" v-model="data.streak" :disabled="!data.github">
+                                    <label
+                                            class="custom-control-label"
+                                            for="customCheck11"
+                                            data-i18n="streak.showStreak"
+                                    >Show GitHub Streak Stats</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -732,5 +778,17 @@
     <script src="js/markdown.js"></script>
     <script src="js/translator.js"></script>
     <script src="js/script.js?v=2"></script>
+    <script>
+        const faviconTag = document.getElementById("faviconTag");
+        const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+        const changeFavicon = () => {
+            if (isDark.matches) faviconTag.href = "./images/github-dark.png";
+            else faviconTag.href = "./images/github-light.png";
+        };
+        
+        changeFavicon();
+        
+        isDark.addEventListener('change', changeFavicon);
+    </script>
 </body>
 </html>

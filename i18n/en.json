@@ -59,6 +59,8 @@
         "githubPlaceholder": "Enter your username...",
         "devto": "Dev.to",
         "devtoPlaceholder": "Enter your username...",
+        "hashnode": "Hashnode",
+        "hashnodePlaceholder": "Enter your blog URL...",
         "linkedin": "LinkedIn",
         "linkedinPlaceholder": "Enter your username...",
         "facebook": "Facebook",
@@ -93,6 +95,7 @@
         "showViews": "Show profile views",
         "showLanguages": "Show most used languages",
         "showStats": "Show GitHub statistics",
+        "activityGraph": "Show GitHub Activity Graph",
         "includePrivate": "Include private repositories"
     },
     "trophies": {
@@ -112,6 +115,11 @@
         "title": "GitHub Metrics",
         "description": "GitHub username required",
         "showMetrics": "Show GitHub metrics"
+    },
+    "streak": {
+        "title": "GitHub Streak Stats",
+        "description": "GitHub username required",
+        "showStreak": "Show GitHub Streak Stats"
     },
     "preview": "Preview",
     "code": {

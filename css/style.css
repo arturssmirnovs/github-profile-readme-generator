@@ -2,10 +2,7 @@ app-sidebar textarea {
   min-height: 290px; }
 app-sidebar img {
   max-width: 100%; }
-.brand-logo {
-  padding-right: 10px; }
-.social-title {
-  padding: 5px 0; }
+
 .jumbotron {
   margin-top: 3rem;
   padding: 2rem 2rem; }
@@ -37,7 +34,7 @@ footer {
 footer p {
   margin-bottom: .25rem; }
 
-  .example-icon {
-    width: 20px; }
+.example-icon {
+  width: 20px; }
 
 /*# sourceMappingURL=style.css.map */

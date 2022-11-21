@@ -58,6 +58,8 @@
         "githubPlaceholder": "Introduce tu nombre de usuario...",
         "devto": "Dev.to",
         "devtoPlaceholder": "Introduce tu nombre de usuario...",
+        "hashnode": "Hashnode",
+        "hashnodePlaceholder": "Introduce la URL de tu blog...",
         "linkedin": "LinkedIn",
         "linkedinPlaceholder": "Introduce tu nombre de usuario...",
         "facebook": "Facebook",
@@ -92,6 +94,7 @@
         "showViews": "Mostrar vistas de perfil",
         "showLanguages": "Mostrar lenguajes más utilizados",
         "showStats": "Mostrar estadísticas de GitHub",
+        "activityGraph": "Mostrar gráfico de actividad de GitHub",
         "includePrivate": "Incluir repositorios privados"
     },
     "trophies": {
@@ -111,6 +114,11 @@
         "title": "Métricas de GitHub",
         "description": "Nombre de usuario de GitHub requerido",
         "showMetrics": "Mostrar métricas de GitHub"
+    },
+    "streak": {
+        "title": "Racha de GitHub",
+        "description": "Nombre de usuario de GitHub requerido",
+        "showStreak": "Mostrar racha de GitHub"
     },
     "preview": "Vista previa",
     "code": {
