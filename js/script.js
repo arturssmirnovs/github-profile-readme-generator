@@ -355,7 +355,7 @@ new Vue({
                 }
 
                 if (data.streak && data.github) {
-                    source += `![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=${data.github})  `;
+                    source += `![GitHub streak stats](https://streak-stats.demolab.com/?user=${data.github})  `;
                     source += "\n";
                     source += "\n";
                 }
