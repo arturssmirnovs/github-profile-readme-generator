@@ -57,9 +57,8 @@ new Vue({
                 pronouns: "",
                 fact: "",
 
-                views: false,
                 stats: false,
-                activityGraph: false,
+                vauntBadge: false,
                 metrics: false,
                 streak: false,
 
@@ -125,9 +124,8 @@ new Vue({
     methods: {
         githubWatcher(github) {
             if (!github) {
-                this.data.views = false;
                 this.data.stats = false;
-                this.data.activityGraph = false;
+                this.data.vauntBadge = false;
                 this.data.private = false;
                 this.data.metrics = false;
                 this.data.streak = false;
@@ -342,8 +340,8 @@ new Vue({
                     source += "\n";
                 }
 
-                if (data.activityGraph && data.github) {
-                    source += `![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=${data.github})  `;
+                if (data.vauntBadge && data.github) {
+                    source += `![Vaunt Badge](https://api.vaunt.dev/v1/github/entities/${data.github}/contributions?format=svg&private=${(data.private)})  `;
                     source += "\n";
                     source += "\n";
                 }
@@ -358,10 +356,6 @@ new Vue({
                     source += `![GitHub streak stats](https://streak-stats.demolab.com/?user=${data.github})  `;
                     source += "\n";
                     source += "\n";
-                }
-
-                if (data.views && data.github) {
-                    source += `![Profile views](https://gpvc.arturio.dev/${data.github})  `;
                 }
             }
 
