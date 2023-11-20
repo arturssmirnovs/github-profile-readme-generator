@@ -580,16 +580,6 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1" v-model="data.views" :disabled="!data.github">
-                                    <label
-                                            class="custom-control-label"
-                                            for="customCheck1"
-                                            data-i18n="statistics.showViews"
-                                    >Show profile views</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <div class="custom-control custom-checkbox mb-2">
                                     <input type="checkbox" class="custom-control-input" id="customCheck2" v-model="data.stats" :disabled="!data.github">
                                     <label
                                             class="custom-control-label"
@@ -600,12 +590,12 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="activityStats" v-model="data.activityGraph" :disabled="!data.github">
+                                    <input type="checkbox" class="custom-control-input" id="vauntBadge" v-model="data.vauntBadge" :disabled="!data.github">
                                     <label
                                             class="custom-control-label"
-                                            for="activityStats"
-                                            data-i18n="statistics.activityGraph"
-                                    >Show GitHub Activity Graph</label>
+                                            for="vauntBadge"
+                                            data-i18n="statistics.vauntBadge"
+                                    >Show Vaunt Badge</label>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-6">
@@ -620,7 +610,7 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="defaultCheck4" v-model="data.private" :disabled="!data.stats" :disabled="!data.github">
+                                    <input type="checkbox" class="custom-control-input" id="defaultCheck4" v-model="data.private" :disabled="!data.github || !data.stats && !data.vauntBadge">
                                     <label
                                             class="custom-control-label"
                                             for="defaultCheck4"
